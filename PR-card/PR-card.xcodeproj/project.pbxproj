@@ -1,0 +1,838 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04BA482BC232BCF9B308D7CD /* Pods_PR_card_PR_cardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3995EA67BB8E6F603F603FA /* Pods_PR_card_PR_cardUITests.framework */; };
+		44392CAD25F46E6400110324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392CAC25F46E6400110324 /* AppDelegate.swift */; };
+		44392CAF25F46E6400110324 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392CAE25F46E6400110324 /* SceneDelegate.swift */; };
+		44392CB125F46E6400110324 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392CB025F46E6400110324 /* ViewController.swift */; };
+		44392CB425F46E6400110324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44392CB225F46E6400110324 /* Main.storyboard */; };
+		44392CB625F46E6E00110324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44392CB525F46E6E00110324 /* Assets.xcassets */; };
+		44392CB925F46E6E00110324 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44392CB725F46E6E00110324 /* LaunchScreen.storyboard */; };
+		44392CC425F46E6E00110324 /* PR_cardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392CC325F46E6E00110324 /* PR_cardTests.swift */; };
+		44392CCF25F46E6E00110324 /* PR_cardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392CCE25F46E6E00110324 /* PR_cardUITests.swift */; };
+		44392CFD25F4730500110324 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44392CFC25F4730500110324 /* MainTabBar.storyboard */; };
+		44392D0225F4733000110324 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392D0125F4733000110324 /* CardsViewController.swift */; };
+		44392D0725F4735300110324 /* Cards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44392D0625F4735300110324 /* Cards.storyboard */; };
+		44392D0C25F4739C00110324 /* QRReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392D0B25F4739C00110324 /* QRReaderViewController.swift */; };
+		44392D1125F473B500110324 /* QRReader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44392D1025F473B500110324 /* QRReader.storyboard */; };
+		44392D1625F4747F00110324 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392D1525F4747F00110324 /* MyProfileViewController.swift */; };
+		44392D1B25F474C500110324 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44392D1A25F474C500110324 /* MyProfile.storyboard */; };
+		44392D2225F4755200110324 /* MyQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392D2125F4755200110324 /* MyQRViewController.swift */; };
+		44392D2A25F4759B00110324 /* MyQR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44392D2925F4759B00110324 /* MyQR.storyboard */; };
+		44392D3025F475E800110324 /* CardsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44392D2E25F475E800110324 /* CardsViewCell.xib */; };
+		44392D3125F475E800110324 /* CardsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392D2F25F475E800110324 /* CardsViewCell.swift */; };
+		44392D4025F47B6900110324 /* OtherDetailCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392D3F25F47B6900110324 /* OtherDetailCardsViewController.swift */; };
+		44392D4825F47B9100110324 /* OtherDetailCards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44392D4725F47B9100110324 /* OtherDetailCards.storyboard */; };
+		44392D5525F4929F00110324 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392D5425F4929F00110324 /* MainTabBarController.swift */; };
+		9634436D936D57DA5C5EB46A /* Pods_PR_cardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0870FC31D928067D02B7A5D7 /* Pods_PR_cardTests.framework */; };
+		A0C4F067F66706E8E1C032C5 /* Pods_PR_card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA93C09E54A7136615A4B74 /* Pods_PR_card.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		44392CC025F46E6E00110324 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44392CA125F46E6400110324 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44392CA825F46E6400110324;
+			remoteInfo = "PR-card";
+		};
+		44392CCB25F46E6E00110324 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44392CA125F46E6400110324 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44392CA825F46E6400110324;
+			remoteInfo = "PR-card";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0870FC31D928067D02B7A5D7 /* Pods_PR_cardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PR_cardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		126A90697C4B5F6E8A739736 /* Pods-PR-card-PR-cardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card-PR-cardUITests.release.xcconfig"; path = "Target Support Files/Pods-PR-card-PR-cardUITests/Pods-PR-card-PR-cardUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1DA93C09E54A7136615A4B74 /* Pods_PR_card.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PR_card.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30E4022B1A545319A3AF4E09 /* Pods-PR-cardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-cardTests.debug.xcconfig"; path = "Target Support Files/Pods-PR-cardTests/Pods-PR-cardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		44392CA925F46E6400110324 /* PR-card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PR-card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44392CAC25F46E6400110324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		44392CAE25F46E6400110324 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		44392CB025F46E6400110324 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44392CB325F46E6400110324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44392CB525F46E6E00110324 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		44392CB825F46E6E00110324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		44392CBA25F46E6E00110324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44392CBF25F46E6E00110324 /* PR-cardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PR-cardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44392CC325F46E6E00110324 /* PR_cardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PR_cardTests.swift; sourceTree = "<group>"; };
+		44392CC525F46E6E00110324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44392CCA25F46E6E00110324 /* PR-cardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PR-cardUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44392CCE25F46E6E00110324 /* PR_cardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PR_cardUITests.swift; sourceTree = "<group>"; };
+		44392CD025F46E6E00110324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44392CFC25F4730500110324 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		44392D0125F4733000110324 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		44392D0625F4735300110324 /* Cards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cards.storyboard; sourceTree = "<group>"; };
+		44392D0B25F4739C00110324 /* QRReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRReaderViewController.swift; sourceTree = "<group>"; };
+		44392D1025F473B500110324 /* QRReader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRReader.storyboard; sourceTree = "<group>"; };
+		44392D1525F4747F00110324 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		44392D1A25F474C500110324 /* MyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
+		44392D2125F4755200110324 /* MyQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRViewController.swift; sourceTree = "<group>"; };
+		44392D2925F4759B00110324 /* MyQR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyQR.storyboard; sourceTree = "<group>"; };
+		44392D2E25F475E800110324 /* CardsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsViewCell.xib; sourceTree = "<group>"; };
+		44392D2F25F475E800110324 /* CardsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewCell.swift; sourceTree = "<group>"; };
+		44392D3F25F47B6900110324 /* OtherDetailCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherDetailCardsViewController.swift; sourceTree = "<group>"; };
+		44392D4725F47B9100110324 /* OtherDetailCards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OtherDetailCards.storyboard; sourceTree = "<group>"; };
+		44392D5425F4929F00110324 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		965A621BD1C890E0041DA71B /* Pods-PR-card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card.debug.xcconfig"; path = "Target Support Files/Pods-PR-card/Pods-PR-card.debug.xcconfig"; sourceTree = "<group>"; };
+		A5803F5AD6DD0E80E27236F1 /* Pods-PR-card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card.release.xcconfig"; path = "Target Support Files/Pods-PR-card/Pods-PR-card.release.xcconfig"; sourceTree = "<group>"; };
+		C022EC84B8C1E666A7EB4BB6 /* Pods-PR-card-PR-cardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card-PR-cardUITests.debug.xcconfig"; path = "Target Support Files/Pods-PR-card-PR-cardUITests/Pods-PR-card-PR-cardUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D879F00EABA6E9CDF73F2D01 /* Pods-PR-cardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-cardTests.release.xcconfig"; path = "Target Support Files/Pods-PR-cardTests/Pods-PR-cardTests.release.xcconfig"; sourceTree = "<group>"; };
+		E3995EA67BB8E6F603F603FA /* Pods_PR_card_PR_cardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PR_card_PR_cardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44392CA625F46E6400110324 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C4F067F66706E8E1C032C5 /* Pods_PR_card.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44392CBC25F46E6E00110324 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9634436D936D57DA5C5EB46A /* Pods_PR_cardTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44392CC725F46E6E00110324 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BA482BC232BCF9B308D7CD /* Pods_PR_card_PR_cardUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		094DBE0C48B85A4D793387D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DA93C09E54A7136615A4B74 /* Pods_PR_card.framework */,
+				E3995EA67BB8E6F603F603FA /* Pods_PR_card_PR_cardUITests.framework */,
+				0870FC31D928067D02B7A5D7 /* Pods_PR_cardTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44392CA025F46E6400110324 = {
+			isa = PBXGroup;
+			children = (
+				44392CAB25F46E6400110324 /* PR-card */,
+				44392CC225F46E6E00110324 /* PR-cardTests */,
+				44392CCD25F46E6E00110324 /* PR-cardUITests */,
+				44392CAA25F46E6400110324 /* Products */,
+				B004E35F157C39695EE0C592 /* Pods */,
+				094DBE0C48B85A4D793387D8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		44392CAA25F46E6400110324 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44392CA925F46E6400110324 /* PR-card.app */,
+				44392CBF25F46E6E00110324 /* PR-cardTests.xctest */,
+				44392CCA25F46E6E00110324 /* PR-cardUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44392CAB25F46E6400110324 /* PR-card */ = {
+			isa = PBXGroup;
+			children = (
+				44392CAC25F46E6400110324 /* AppDelegate.swift */,
+				44392CAE25F46E6400110324 /* SceneDelegate.swift */,
+				44392CB025F46E6400110324 /* ViewController.swift */,
+				44392CB225F46E6400110324 /* Main.storyboard */,
+				44392CFC25F4730500110324 /* MainTabBar.storyboard */,
+				44392D5425F4929F00110324 /* MainTabBarController.swift */,
+				44392CF825F4724C00110324 /* Model */,
+				44392CF725F471FF00110324 /* Presenter */,
+				44392CF625F471ED00110324 /* View */,
+				44392CB525F46E6E00110324 /* Assets.xcassets */,
+				44392CB725F46E6E00110324 /* LaunchScreen.storyboard */,
+				44392CBA25F46E6E00110324 /* Info.plist */,
+			);
+			path = "PR-card";
+			sourceTree = "<group>";
+		};
+		44392CC225F46E6E00110324 /* PR-cardTests */ = {
+			isa = PBXGroup;
+			children = (
+				44392CC325F46E6E00110324 /* PR_cardTests.swift */,
+				44392CC525F46E6E00110324 /* Info.plist */,
+			);
+			path = "PR-cardTests";
+			sourceTree = "<group>";
+		};
+		44392CCD25F46E6E00110324 /* PR-cardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				44392CCE25F46E6E00110324 /* PR_cardUITests.swift */,
+				44392CD025F46E6E00110324 /* Info.plist */,
+			);
+			path = "PR-cardUITests";
+			sourceTree = "<group>";
+		};
+		44392CF625F471ED00110324 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44392CF925F4727B00110324 /* CardsView */,
+				44392CFA25F472B900110324 /* QRReaderView */,
+				44392CFB25F472CC00110324 /* MyProfileView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44392CF725F471FF00110324 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		44392CF825F4724C00110324 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44392CF925F4727B00110324 /* CardsView */ = {
+			isa = PBXGroup;
+			children = (
+				44392D0125F4733000110324 /* CardsViewController.swift */,
+				44392D0625F4735300110324 /* Cards.storyboard */,
+				44392D3E25F47AE900110324 /* OtherDetailCardsView */,
+				44392D2025F474F100110324 /* CardsViewCell */,
+				44392D1F25F474DE00110324 /* MyQRView */,
+			);
+			path = CardsView;
+			sourceTree = "<group>";
+		};
+		44392CFA25F472B900110324 /* QRReaderView */ = {
+			isa = PBXGroup;
+			children = (
+				44392D0B25F4739C00110324 /* QRReaderViewController.swift */,
+				44392D1025F473B500110324 /* QRReader.storyboard */,
+			);
+			path = QRReaderView;
+			sourceTree = "<group>";
+		};
+		44392CFB25F472CC00110324 /* MyProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				44392D1525F4747F00110324 /* MyProfileViewController.swift */,
+				44392D1A25F474C500110324 /* MyProfile.storyboard */,
+			);
+			path = MyProfileView;
+			sourceTree = "<group>";
+		};
+		44392D1F25F474DE00110324 /* MyQRView */ = {
+			isa = PBXGroup;
+			children = (
+				44392D2125F4755200110324 /* MyQRViewController.swift */,
+				44392D2925F4759B00110324 /* MyQR.storyboard */,
+			);
+			path = MyQRView;
+			sourceTree = "<group>";
+		};
+		44392D2025F474F100110324 /* CardsViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				44392D2E25F475E800110324 /* CardsViewCell.xib */,
+				44392D2F25F475E800110324 /* CardsViewCell.swift */,
+			);
+			path = CardsViewCell;
+			sourceTree = "<group>";
+		};
+		44392D3E25F47AE900110324 /* OtherDetailCardsView */ = {
+			isa = PBXGroup;
+			children = (
+				44392D3F25F47B6900110324 /* OtherDetailCardsViewController.swift */,
+				44392D4725F47B9100110324 /* OtherDetailCards.storyboard */,
+			);
+			path = OtherDetailCardsView;
+			sourceTree = "<group>";
+		};
+		B004E35F157C39695EE0C592 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				965A621BD1C890E0041DA71B /* Pods-PR-card.debug.xcconfig */,
+				A5803F5AD6DD0E80E27236F1 /* Pods-PR-card.release.xcconfig */,
+				C022EC84B8C1E666A7EB4BB6 /* Pods-PR-card-PR-cardUITests.debug.xcconfig */,
+				126A90697C4B5F6E8A739736 /* Pods-PR-card-PR-cardUITests.release.xcconfig */,
+				30E4022B1A545319A3AF4E09 /* Pods-PR-cardTests.debug.xcconfig */,
+				D879F00EABA6E9CDF73F2D01 /* Pods-PR-cardTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44392CA825F46E6400110324 /* PR-card */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44392CD325F46E6E00110324 /* Build configuration list for PBXNativeTarget "PR-card" */;
+			buildPhases = (
+				456D777D21B24D62DBF9E6EC /* [CP] Check Pods Manifest.lock */,
+				44392CA525F46E6400110324 /* Sources */,
+				44392CA625F46E6400110324 /* Frameworks */,
+				44392CA725F46E6400110324 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PR-card";
+			productName = "PR-card";
+			productReference = 44392CA925F46E6400110324 /* PR-card.app */;
+			productType = "com.apple.product-type.application";
+		};
+		44392CBE25F46E6E00110324 /* PR-cardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44392CD625F46E6E00110324 /* Build configuration list for PBXNativeTarget "PR-cardTests" */;
+			buildPhases = (
+				380D22ED5E9F655708F1605C /* [CP] Check Pods Manifest.lock */,
+				44392CBB25F46E6E00110324 /* Sources */,
+				44392CBC25F46E6E00110324 /* Frameworks */,
+				44392CBD25F46E6E00110324 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44392CC125F46E6E00110324 /* PBXTargetDependency */,
+			);
+			name = "PR-cardTests";
+			productName = "PR-cardTests";
+			productReference = 44392CBF25F46E6E00110324 /* PR-cardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		44392CC925F46E6E00110324 /* PR-cardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44392CD925F46E6E00110324 /* Build configuration list for PBXNativeTarget "PR-cardUITests" */;
+			buildPhases = (
+				B6EE0709FDB730DC8B68D97B /* [CP] Check Pods Manifest.lock */,
+				44392CC625F46E6E00110324 /* Sources */,
+				44392CC725F46E6E00110324 /* Frameworks */,
+				44392CC825F46E6E00110324 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44392CCC25F46E6E00110324 /* PBXTargetDependency */,
+			);
+			name = "PR-cardUITests";
+			productName = "PR-cardUITests";
+			productReference = 44392CCA25F46E6E00110324 /* PR-cardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		44392CA125F46E6400110324 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					44392CA825F46E6400110324 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					44392CBE25F46E6E00110324 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 44392CA825F46E6400110324;
+					};
+					44392CC925F46E6E00110324 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 44392CA825F46E6400110324;
+					};
+				};
+			};
+			buildConfigurationList = 44392CA425F46E6400110324 /* Build configuration list for PBXProject "PR-card" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 44392CA025F46E6400110324;
+			productRefGroup = 44392CAA25F46E6400110324 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44392CA825F46E6400110324 /* PR-card */,
+				44392CBE25F46E6E00110324 /* PR-cardTests */,
+				44392CC925F46E6E00110324 /* PR-cardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		44392CA725F46E6400110324 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44392D4825F47B9100110324 /* OtherDetailCards.storyboard in Resources */,
+				44392CB925F46E6E00110324 /* LaunchScreen.storyboard in Resources */,
+				44392CFD25F4730500110324 /* MainTabBar.storyboard in Resources */,
+				44392D3025F475E800110324 /* CardsViewCell.xib in Resources */,
+				44392D1125F473B500110324 /* QRReader.storyboard in Resources */,
+				44392CB625F46E6E00110324 /* Assets.xcassets in Resources */,
+				44392D1B25F474C500110324 /* MyProfile.storyboard in Resources */,
+				44392D0725F4735300110324 /* Cards.storyboard in Resources */,
+				44392CB425F46E6400110324 /* Main.storyboard in Resources */,
+				44392D2A25F4759B00110324 /* MyQR.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44392CBD25F46E6E00110324 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44392CC825F46E6E00110324 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		380D22ED5E9F655708F1605C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PR-cardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		456D777D21B24D62DBF9E6EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PR-card-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6EE0709FDB730DC8B68D97B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PR-card-PR-cardUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44392CA525F46E6400110324 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44392D2225F4755200110324 /* MyQRViewController.swift in Sources */,
+				44392D4025F47B6900110324 /* OtherDetailCardsViewController.swift in Sources */,
+				44392D5525F4929F00110324 /* MainTabBarController.swift in Sources */,
+				44392D1625F4747F00110324 /* MyProfileViewController.swift in Sources */,
+				44392D0225F4733000110324 /* CardsViewController.swift in Sources */,
+				44392CB125F46E6400110324 /* ViewController.swift in Sources */,
+				44392D0C25F4739C00110324 /* QRReaderViewController.swift in Sources */,
+				44392CAD25F46E6400110324 /* AppDelegate.swift in Sources */,
+				44392D3125F475E800110324 /* CardsViewCell.swift in Sources */,
+				44392CAF25F46E6400110324 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44392CBB25F46E6E00110324 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44392CC425F46E6E00110324 /* PR_cardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44392CC625F46E6E00110324 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44392CCF25F46E6E00110324 /* PR_cardUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44392CC125F46E6E00110324 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44392CA825F46E6400110324 /* PR-card */;
+			targetProxy = 44392CC025F46E6E00110324 /* PBXContainerItemProxy */;
+		};
+		44392CCC25F46E6E00110324 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44392CA825F46E6400110324 /* PR-card */;
+			targetProxy = 44392CCB25F46E6E00110324 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		44392CB225F46E6400110324 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44392CB325F46E6400110324 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		44392CB725F46E6E00110324 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44392CB825F46E6E00110324 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		44392CD125F46E6E00110324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		44392CD225F46E6E00110324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		44392CD425F46E6E00110324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 965A621BD1C890E0041DA71B /* Pods-PR-card.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "PR-card/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icloud.kaitokudou2468110921.PR-card";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44392CD525F46E6E00110324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5803F5AD6DD0E80E27236F1 /* Pods-PR-card.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "PR-card/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icloud.kaitokudou2468110921.PR-card";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		44392CD725F46E6E00110324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30E4022B1A545319A3AF4E09 /* Pods-PR-cardTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "PR-cardTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icloud.kaitokudou2468110921.PR-cardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PR-card.app/PR-card";
+			};
+			name = Debug;
+		};
+		44392CD825F46E6E00110324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D879F00EABA6E9CDF73F2D01 /* Pods-PR-cardTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "PR-cardTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icloud.kaitokudou2468110921.PR-cardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PR-card.app/PR-card";
+			};
+			name = Release;
+		};
+		44392CDA25F46E6E00110324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C022EC84B8C1E666A7EB4BB6 /* Pods-PR-card-PR-cardUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "PR-cardUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icloud.kaitokudou2468110921.PR-cardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "PR-card";
+			};
+			name = Debug;
+		};
+		44392CDB25F46E6E00110324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 126A90697C4B5F6E8A739736 /* Pods-PR-card-PR-cardUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "PR-cardUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icloud.kaitokudou2468110921.PR-cardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "PR-card";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44392CA425F46E6400110324 /* Build configuration list for PBXProject "PR-card" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44392CD125F46E6E00110324 /* Debug */,
+				44392CD225F46E6E00110324 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44392CD325F46E6E00110324 /* Build configuration list for PBXNativeTarget "PR-card" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44392CD425F46E6E00110324 /* Debug */,
+				44392CD525F46E6E00110324 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44392CD625F46E6E00110324 /* Build configuration list for PBXNativeTarget "PR-cardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44392CD725F46E6E00110324 /* Debug */,
+				44392CD825F46E6E00110324 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44392CD925F46E6E00110324 /* Build configuration list for PBXNativeTarget "PR-cardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44392CDA25F46E6E00110324 /* Debug */,
+				44392CDB25F46E6E00110324 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 44392CA125F46E6400110324 /* Project object */;
+}
