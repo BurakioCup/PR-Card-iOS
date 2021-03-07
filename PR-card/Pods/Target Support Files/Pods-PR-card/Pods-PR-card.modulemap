@@ -1,0 +1,6 @@
+framework module Pods_PR_card {
+  umbrella header "Pods-PR-card-umbrella.h"
+
+  export *
+  module * { export * }
+}
