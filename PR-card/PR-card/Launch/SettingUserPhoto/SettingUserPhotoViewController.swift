@@ -8,22 +8,15 @@
 import UIKit
 
 class SettingUserPhotoViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    // 自動回転はOFFで縦に固定
+    override var shouldAutorotate: Bool {
+        //縦画面なので縦に固定
+        UIDevice.current.setValue(1, forKey: "orientation")
+        return false
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    */
-
 }
