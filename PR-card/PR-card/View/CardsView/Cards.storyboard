@@ -12,7 +12,7 @@
         <!--PR-card-->
         <scene sceneID="pz7-ZY-YG8">
             <objects>
-                <viewController id="2NQ-FT-Prj" customClass="CardsViewController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Cards" id="2NQ-FT-Prj" customClass="CardsViewController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="knU-e2-wvv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
