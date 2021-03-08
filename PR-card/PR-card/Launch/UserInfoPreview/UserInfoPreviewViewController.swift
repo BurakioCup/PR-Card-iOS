@@ -8,22 +8,24 @@
 import UIKit
 
 class UserInfoPreviewViewController: UIViewController {
-
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userPhoto: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // 再設定ボタン
+    @IBAction func reconfigurationButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "SettingUserName", bundle: nil)
+        let settingUserNameVC = storyboard.instantiateViewController(identifier: "SettingUserName") as SettingUserNameViewController
+        navigationController?.pushViewController(settingUserNameVC, animated: true)
     }
-    */
-
+    
+    // 完了ボタン
+    @IBAction func finishButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ScreenRotation", bundle: nil)
+        let screenRotationVC = storyboard.instantiateViewController(identifier: "ScreenRotation") as ScreenRotationViewController
+        navigationController?.pushViewController(screenRotationVC, animated: true)
+    }
 }
