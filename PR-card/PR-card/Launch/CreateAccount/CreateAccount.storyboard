@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create Account View Controller-->
+        <!--Create Account-->
         <scene sceneID="khq-up-wDn">
             <objects>
                 <viewController storyboardIdentifier="CreateAccount" id="jeq-WK-cc0" customClass="CreateAccountViewController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,7 +58,7 @@
                         <viewLayoutGuide key="safeArea" id="0Ac-gX-3FL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="d0g-La-gAR"/>
+                    <navigationItem key="navigationItem" title="Create Account" id="d0g-La-gAR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50x-WU-Cou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
