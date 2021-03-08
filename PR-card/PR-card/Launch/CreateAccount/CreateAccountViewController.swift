@@ -11,19 +11,15 @@ class CreateAccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func createAccountButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
+        let mainTabBarVC = storyboard.instantiateViewController(identifier: "MainTabBar") as MainTabBarController
+        mainTabBarVC.modalPresentationStyle = .fullScreen
+        self.present(mainTabBarVC, animated: true, completion: nil)
+//        cardsVC.modalPresentationStyle = .fullScreen
+//        self.present(cardsVC, animated: true, completion: nil)
     }
-    */
-
 }
