@@ -14,8 +14,8 @@ class SettingUserNameViewController: UIViewController {
     }
     @IBAction func nameVoiceButton(_ sender: Any) {
         print("voice")
-        let storyboard = UIStoryboard(name: "ScreenRotation", bundle: nil)
-        let screenRotationVC = storyboard.instantiateViewController(identifier: "ScreenRotation") as ScreenRotationViewController
-        navigationController?.pushViewController(screenRotationVC, animated: true)
+        let storyboard = UIStoryboard(name: "SettingUserPhoto", bundle: nil)
+        let settingUserPhotoVC = storyboard.instantiateViewController(identifier: "SettingUserPhoto") as SettingUserPhotoViewController
+        navigationController?.pushViewController(settingUserPhotoVC, animated: true)
     }
 }
