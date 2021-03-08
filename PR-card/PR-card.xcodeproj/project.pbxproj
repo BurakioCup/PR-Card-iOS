@@ -32,8 +32,19 @@
 		44392D5525F4929F00110324 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392D5425F4929F00110324 /* MainTabBarController.swift */; };
 		44392D7C25F4A35900110324 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392D7B25F4A35900110324 /* CreateAccountViewController.swift */; };
 		44392D8125F4A38400110324 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44392D8025F4A38400110324 /* CreateAccount.storyboard */; };
+		445CFD0D25F66B3D0070C999 /* ScreenRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445CFD0C25F66B3D0070C999 /* ScreenRotationViewController.swift */; };
+		445CFD1525F66B510070C999 /* ScreenRotation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445CFD1425F66B510070C999 /* ScreenRotation.storyboard */; };
+		445CFD1B25F6752B0070C999 /* ParametersEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445CFD1A25F6752B0070C999 /* ParametersEditViewController.swift */; };
+		445CFD2325F675390070C999 /* ParametersEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445CFD2225F675390070C999 /* ParametersEdit.storyboard */; };
+		445CFD2925F67C830070C999 /* ParametersEditPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445CFD2825F67C830070C999 /* ParametersEditPreviewViewController.swift */; };
+		445CFD3125F67C990070C999 /* ParametersEditPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445CFD3025F67C990070C999 /* ParametersEditPreview.storyboard */; };
+		445CFD3725F67E800070C999 /* SettingUserPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445CFD3625F67E800070C999 /* SettingUserPhotoViewController.swift */; };
+		445CFD3F25F67E9E0070C999 /* SettingUserPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445CFD3E25F67E9E0070C999 /* SettingUserPhoto.storyboard */; };
+		445CFD4525F682DD0070C999 /* UserInfoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445CFD4425F682DD0070C999 /* UserInfoPreviewViewController.swift */; };
+		445CFD4A25F682F20070C999 /* UserInfoPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445CFD4925F682F20070C999 /* UserInfoPreview.storyboard */; };
 		44B5BC0D25F6479100141E75 /* SettingUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5BC0C25F6479100141E75 /* SettingUserNameViewController.swift */; };
 		44B5BC1525F647EA00141E75 /* SettingUserName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B5BC1425F647EA00141E75 /* SettingUserName.storyboard */; };
+		44B5BC1E25F65C4A00141E75 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */; };
 		9634436D936D57DA5C5EB46A /* Pods_PR_cardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0870FC31D928067D02B7A5D7 /* Pods_PR_cardTests.framework */; };
 		A0C4F067F66706E8E1C032C5 /* Pods_PR_card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA93C09E54A7136615A4B74 /* Pods_PR_card.framework */; };
 /* End PBXBuildFile section */
@@ -90,8 +101,19 @@
 		44392D5425F4929F00110324 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		44392D7B25F4A35900110324 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		44392D8025F4A38400110324 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
+		445CFD0C25F66B3D0070C999 /* ScreenRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRotationViewController.swift; sourceTree = "<group>"; };
+		445CFD1425F66B510070C999 /* ScreenRotation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScreenRotation.storyboard; sourceTree = "<group>"; };
+		445CFD1A25F6752B0070C999 /* ParametersEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersEditViewController.swift; sourceTree = "<group>"; };
+		445CFD2225F675390070C999 /* ParametersEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParametersEdit.storyboard; sourceTree = "<group>"; };
+		445CFD2825F67C830070C999 /* ParametersEditPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersEditPreviewViewController.swift; sourceTree = "<group>"; };
+		445CFD3025F67C990070C999 /* ParametersEditPreview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParametersEditPreview.storyboard; sourceTree = "<group>"; };
+		445CFD3625F67E800070C999 /* SettingUserPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUserPhotoViewController.swift; sourceTree = "<group>"; };
+		445CFD3E25F67E9E0070C999 /* SettingUserPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingUserPhoto.storyboard; sourceTree = "<group>"; };
+		445CFD4425F682DD0070C999 /* UserInfoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPreviewViewController.swift; sourceTree = "<group>"; };
+		445CFD4925F682F20070C999 /* UserInfoPreview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfoPreview.storyboard; sourceTree = "<group>"; };
 		44B5BC0C25F6479100141E75 /* SettingUserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUserNameViewController.swift; sourceTree = "<group>"; };
 		44B5BC1425F647EA00141E75 /* SettingUserName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingUserName.storyboard; sourceTree = "<group>"; };
+		44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 		965A621BD1C890E0041DA71B /* Pods-PR-card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card.debug.xcconfig"; path = "Target Support Files/Pods-PR-card/Pods-PR-card.debug.xcconfig"; sourceTree = "<group>"; };
 		A5803F5AD6DD0E80E27236F1 /* Pods-PR-card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card.release.xcconfig"; path = "Target Support Files/Pods-PR-card/Pods-PR-card.release.xcconfig"; sourceTree = "<group>"; };
 		C022EC84B8C1E666A7EB4BB6 /* Pods-PR-card-PR-cardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card-PR-cardUITests.debug.xcconfig"; path = "Target Support Files/Pods-PR-card-PR-cardUITests/Pods-PR-card-PR-cardUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +190,7 @@
 				44392CB225F46E6400110324 /* Main.storyboard */,
 				44392CFC25F4730500110324 /* MainTabBar.storyboard */,
 				44392D5425F4929F00110324 /* MainTabBarController.swift */,
+				44B5BC1C25F65BFE00141E75 /* Extension */,
 				44392CF825F4724C00110324 /* Model */,
 				44392CF725F471FF00110324 /* Presenter */,
 				44392CF625F471ED00110324 /* View */,
@@ -280,6 +303,11 @@
 		44392D7325F4A1DF00110324 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				445CFD4325F6826D0070C999 /* UserInfoPreview */,
+				445CFD3525F67E5A0070C999 /* SettingUserPhoto */,
+				445CFD2725F67C570070C999 /* ParametersEditPreview */,
+				445CFD1925F6750A0070C999 /* ParametersEdit */,
+				445CFD0B25F66B250070C999 /* ScreenRotation */,
 				44B5BC0B25F646E700141E75 /* SettingUserName */,
 				44392D7725F4A29200110324 /* CreateAccount */,
 				44392CB725F46E6E00110324 /* LaunchScreen.storyboard */,
@@ -296,6 +324,51 @@
 			path = CreateAccount;
 			sourceTree = "<group>";
 		};
+		445CFD0B25F66B250070C999 /* ScreenRotation */ = {
+			isa = PBXGroup;
+			children = (
+				445CFD0C25F66B3D0070C999 /* ScreenRotationViewController.swift */,
+				445CFD1425F66B510070C999 /* ScreenRotation.storyboard */,
+			);
+			path = ScreenRotation;
+			sourceTree = "<group>";
+		};
+		445CFD1925F6750A0070C999 /* ParametersEdit */ = {
+			isa = PBXGroup;
+			children = (
+				445CFD1A25F6752B0070C999 /* ParametersEditViewController.swift */,
+				445CFD2225F675390070C999 /* ParametersEdit.storyboard */,
+			);
+			path = ParametersEdit;
+			sourceTree = "<group>";
+		};
+		445CFD2725F67C570070C999 /* ParametersEditPreview */ = {
+			isa = PBXGroup;
+			children = (
+				445CFD2825F67C830070C999 /* ParametersEditPreviewViewController.swift */,
+				445CFD3025F67C990070C999 /* ParametersEditPreview.storyboard */,
+			);
+			path = ParametersEditPreview;
+			sourceTree = "<group>";
+		};
+		445CFD3525F67E5A0070C999 /* SettingUserPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				445CFD3625F67E800070C999 /* SettingUserPhotoViewController.swift */,
+				445CFD3E25F67E9E0070C999 /* SettingUserPhoto.storyboard */,
+			);
+			path = SettingUserPhoto;
+			sourceTree = "<group>";
+		};
+		445CFD4325F6826D0070C999 /* UserInfoPreview */ = {
+			isa = PBXGroup;
+			children = (
+				445CFD4425F682DD0070C999 /* UserInfoPreviewViewController.swift */,
+				445CFD4925F682F20070C999 /* UserInfoPreview.storyboard */,
+			);
+			path = UserInfoPreview;
+			sourceTree = "<group>";
+		};
 		44B5BC0B25F646E700141E75 /* SettingUserName */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +376,14 @@
 				44B5BC1425F647EA00141E75 /* SettingUserName.storyboard */,
 			);
 			path = SettingUserName;
+			sourceTree = "<group>";
+		};
+		44B5BC1C25F65BFE00141E75 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		B004E35F157C39695EE0C592 /* Pods */ = {
@@ -427,14 +508,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				44392D4825F47B9100110324 /* OtherDetailCards.storyboard in Resources */,
+				445CFD1525F66B510070C999 /* ScreenRotation.storyboard in Resources */,
+				445CFD3125F67C990070C999 /* ParametersEditPreview.storyboard in Resources */,
 				44392CB925F46E6E00110324 /* LaunchScreen.storyboard in Resources */,
 				44392CFD25F4730500110324 /* MainTabBar.storyboard in Resources */,
 				44392D3025F475E800110324 /* CardsViewCell.xib in Resources */,
 				44392D1125F473B500110324 /* QRReader.storyboard in Resources */,
 				44392CB625F46E6E00110324 /* Assets.xcassets in Resources */,
 				44392D8125F4A38400110324 /* CreateAccount.storyboard in Resources */,
+				445CFD3F25F67E9E0070C999 /* SettingUserPhoto.storyboard in Resources */,
+				445CFD4A25F682F20070C999 /* UserInfoPreview.storyboard in Resources */,
 				44392D1B25F474C500110324 /* MyProfile.storyboard in Resources */,
 				44392D0725F4735300110324 /* Cards.storyboard in Resources */,
+				445CFD2325F675390070C999 /* ParametersEdit.storyboard in Resources */,
 				44392CB425F46E6400110324 /* Main.storyboard in Resources */,
 				44392D2A25F4759B00110324 /* MyQR.storyboard in Resources */,
 				44B5BC1525F647EA00141E75 /* SettingUserName.storyboard in Resources */,
@@ -573,10 +659,16 @@
 				44392D0225F4733000110324 /* CardsViewController.swift in Sources */,
 				44392CB125F46E6400110324 /* ViewController.swift in Sources */,
 				44B5BC0D25F6479100141E75 /* SettingUserNameViewController.swift in Sources */,
+				445CFD1B25F6752B0070C999 /* ParametersEditViewController.swift in Sources */,
 				44392D0C25F4739C00110324 /* QRReaderViewController.swift in Sources */,
 				44392CAD25F46E6400110324 /* AppDelegate.swift in Sources */,
+				445CFD0D25F66B3D0070C999 /* ScreenRotationViewController.swift in Sources */,
+				44B5BC1E25F65C4A00141E75 /* UIColorHex.swift in Sources */,
 				44392D3125F475E800110324 /* CardsViewCell.swift in Sources */,
 				44392CAF25F46E6400110324 /* SceneDelegate.swift in Sources */,
+				445CFD2925F67C830070C999 /* ParametersEditPreviewViewController.swift in Sources */,
+				445CFD4525F682DD0070C999 /* UserInfoPreviewViewController.swift in Sources */,
+				445CFD3725F67E800070C999 /* SettingUserPhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
