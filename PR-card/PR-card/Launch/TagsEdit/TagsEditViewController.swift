@@ -8,7 +8,14 @@
 import UIKit
 
 class TagsEditViewController: UIViewController {
-
+    
+    @IBOutlet weak var nickNameLabel: UILabel!
+    @IBOutlet weak var firstHashTagLabel: UILabel!
+    @IBOutlet weak var secondHashTagLabel: UILabel!
+    @IBOutlet weak var ThirdHashTagLabel: UILabel!
+    @IBOutlet weak var fourthHashTagLabel: UILabel!
+    @IBOutlet weak var commentContentLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,4 +35,8 @@ class TagsEditViewController: UIViewController {
             return .landscapeRight
         }
     }
+    
+    @IBAction func voiceInputButton(_ sender: Any) {
+    }
+    
 }
