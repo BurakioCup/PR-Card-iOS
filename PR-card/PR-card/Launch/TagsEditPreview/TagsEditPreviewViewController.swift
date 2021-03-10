@@ -37,9 +37,15 @@ class TagsEditPreviewViewController: UIViewController {
     }
     
     @IBAction func tagsReconfiguration(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "TagsEdit", bundle: nil)
+        let tagsEditVC = storyboard.instantiateViewController(identifier: "TagsEdit") as TagsEditViewController
+        navigationController?.pushViewController(tagsEditVC, animated: true)
     }
     
     @IBAction func tagsFinish(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBar") as MainTabBarController
+        navigationController?.pushViewController(mainTabBarController, animated: true)
     }
     
     
