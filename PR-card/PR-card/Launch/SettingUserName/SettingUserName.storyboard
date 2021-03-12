@@ -50,6 +50,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Status" id="a8E-RI-tMX"/>
+                    <connections>
+                        <outlet property="nameVoiceButtonImage" destination="NYs-rN-Qek" id="5DX-22-Z0X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PcC-l5-stt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
