@@ -15,26 +15,57 @@
                     <view key="view" contentMode="scaleToFill" id="00J-1e-Pa4">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0o-oH-JUP">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                            </arscnView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZG-7e-akM" customClass="LoadingView" customModule="PR_card" customModuleProvider="target">
+                                <rect key="frame" x="298" y="17" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back" translatesAutoresizingMaskIntoConstraints="NO" id="LLm-gI-K5Z">
+                                <rect key="frame" x="12" y="17" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bUj-iX-AlX"/>
+                                    <constraint firstAttribute="width" constant="50" id="vR3-s9-ukj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gtZ-Bv-0dK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T0o-oH-JUP" firstAttribute="top" secondItem="00J-1e-Pa4" secondAttribute="top" id="1WY-Me-pZh"/>
+                            <constraint firstItem="MZG-7e-akM" firstAttribute="top" secondItem="gtZ-Bv-0dK" secondAttribute="top" constant="17" id="7GO-Eg-dcM"/>
+                            <constraint firstItem="LLm-gI-K5Z" firstAttribute="leading" secondItem="00J-1e-Pa4" secondAttribute="leading" constant="12" id="L6S-2W-OXM"/>
+                            <constraint firstAttribute="bottom" secondItem="T0o-oH-JUP" secondAttribute="bottom" id="OW6-7f-nle"/>
+                            <constraint firstItem="gtZ-Bv-0dK" firstAttribute="trailing" secondItem="MZG-7e-akM" secondAttribute="trailing" constant="254" id="PEp-JZ-LC2"/>
+                            <constraint firstItem="gtZ-Bv-0dK" firstAttribute="bottom" secondItem="MZG-7e-akM" secondAttribute="bottom" constant="277" id="RqT-ts-NQS"/>
+                            <constraint firstItem="LLm-gI-K5Z" firstAttribute="top" secondItem="gtZ-Bv-0dK" secondAttribute="top" constant="17" id="W0K-Kv-7VP"/>
+                            <constraint firstItem="MZG-7e-akM" firstAttribute="leading" secondItem="gtZ-Bv-0dK" secondAttribute="leading" constant="254" id="WHY-F7-gxg"/>
+                            <constraint firstAttribute="trailing" secondItem="T0o-oH-JUP" secondAttribute="trailing" id="ZDO-eA-NVW"/>
+                            <constraint firstItem="T0o-oH-JUP" firstAttribute="leading" secondItem="00J-1e-Pa4" secondAttribute="leading" id="aak-ky-cKd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="PR-card" id="DQT-h8-dkg"/>
+                    <connections>
+                        <outlet property="LoadingView" destination="MZG-7e-akM" id="h3t-td-hJV"/>
+                        <outlet property="sceneView" destination="T0o-oH-JUP" id="XuN-4O-wuz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6js-X9-Tcs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1210.144927536232" y="127.90178571428571"/>
+            <point key="canvasLocation" x="1210.0446428571429" y="127.53623188405798"/>
         </scene>
         <!--QRReader-->
         <scene sceneID="4bd-sc-UtY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3V8-3N-8ln" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3V8-3N-8ln" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="QRReader" image="qrcode.viewfinder" selectedImage="qrcode.viewfinder" catalog="system" id="0tl-z4-sgr">
                         <inset key="imageInsets" minX="0.0" minY="-12" maxX="0.0" maxY="-13"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hSy-g0-2zC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
