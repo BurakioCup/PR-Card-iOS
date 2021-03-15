@@ -60,6 +60,7 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         if let frame = self.sceneView.session.currentFrame {
+            findQRCode(frame: frame)
         }
     }
     
@@ -106,5 +107,35 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
             self.sceneView.scene.rootNode.addChildNode(imageNode)
         }
     }
+    
+    func findQRCode(frame currentFrame: ARFrame) {
+        //Visionの解析処理をメインスレッドで行うとレスポンスが悪くなるのでバックグラウンドで行う
+        DispatchQueue.global(qos: .background).async {
+            // リクエストには処理が完了したときに呼ばれるハンドラを登録しておく
+            let request = VNDetectBarcodesRequest(completionHandler: self.handleBarcodes)
+            let handler = VNImageRequestHandler(cvPixelBuffer: currentFrame.capturedImage, orientation: .downMirrored, options: [:])
+            do {
+                try handler.perform([request])
+            } catch let error as NSError {
+                print("Failed to perform image request: \(error)")
+                return
+            }
+        }
+    }
+    
+    func handleBarcodes(request: VNRequest, error: Error?) {
+        DispatchQueue.main.async {
+            guard let result = request.results?.first as? VNBarcodeObservation else {
+                self.LoadingView.isHidden = true
+                return
+            }
+            if let value = result.payloadStringValue {
+                //MARK: QRコードから取得したURLを用いたサーバとの通信処理
+                self.LoadingView.isHidden = false
+                print(value)
+            }
+        }
+    }
+    
     }
 }
