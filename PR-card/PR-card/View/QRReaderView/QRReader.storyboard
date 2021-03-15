@@ -28,7 +28,9 @@
         <scene sceneID="4bd-sc-UtY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3V8-3N-8ln" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="QRReader" id="0tl-z4-sgr"/>
+                    <tabBarItem key="tabBarItem" title="QRReader" image="qrcode.viewfinder" selectedImage="qrcode.viewfinder" catalog="system" id="0tl-z4-sgr">
+                        <inset key="imageInsets" minX="0.0" minY="-12" maxX="0.0" maxY="-13"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hSy-g0-2zC">
@@ -46,6 +48,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="qrcode.viewfinder" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

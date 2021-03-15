@@ -67,11 +67,13 @@
             </objects>
             <point key="canvasLocation" x="1143.4782608695652" y="139.28571428571428"/>
         </scene>
-        <!--Cards-->
+        <!--Navigation Controller-->
         <scene sceneID="HIL-eF-xoP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IUm-UX-uR3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cards" image="111License_Blue" id="EZX-Sg-oKN"/>
+                    <tabBarItem key="tabBarItem" title="" image="Cards" selectedImage="Cards" id="EZX-Sg-oKN">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XXJ-cf-SHJ">
@@ -88,8 +90,9 @@
             <point key="canvasLocation" x="234.78260869565219" y="139.95535714285714"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="111License_Blue" width="50" height="33"/>
+        <image name="Cards" width="97.5" height="97.5"/>
         <image name="MyPRcard" width="171.5" height="62.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

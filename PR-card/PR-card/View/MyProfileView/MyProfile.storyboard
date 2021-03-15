@@ -34,7 +34,9 @@
         <scene sceneID="qD8-sQ-cUj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7bh-x1-92i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyProfile" id="HDg-hA-FCD"/>
+                    <tabBarItem key="tabBarItem" title="MyProfile" image="person.crop.circle" selectedImage="person.crop.circle" catalog="system" id="HDg-hA-FCD">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k9L-Rn-Lyf">
@@ -52,6 +54,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="person.crop.circle" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
