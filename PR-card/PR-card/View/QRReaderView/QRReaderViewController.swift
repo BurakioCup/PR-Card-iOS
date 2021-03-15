@@ -62,6 +62,29 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         if let frame = self.sceneView.session.currentFrame {
         }
     }
+    
+    func setTextToScene(string: String){
+        if let camera = sceneView.pointOfView {
+            let depth:CGFloat = 0.2 // 奥行き0.2m
+            //extrusionDepth: 文字の厚さ
+            let text = SCNText(string: string, extrusionDepth: depth)
+            text.font = UIFont.systemFont(ofSize: 1,weight: UIFont.Weight(rawValue: CGFloat(10)))// 文字の大きさを1に設定
+            let billboardConstraint = SCNBillboardConstraint()
+            billboardConstraint.freeAxes = SCNBillboardAxis.Y
+            let textNode = SCNNode(geometry: text)
+            // テキストを配置する場所を決める
+            let (min, max) = (textNode.boundingBox)
+            let textBoundsWidth = (max.x - min.x)
+            let textBoundsHeight = (max.y - min.y)
+            let position = camera.position
+            textNode.position = SCNVector3(position.x-textBoundsWidth/2, position.y+0.2,position.z-1)
+            textNode.pivot = SCNMatrix4MakeTranslation(textBoundsWidth/2 + min.x, textBoundsHeight/2 + min.y, 0)
+            textNode.scale = SCNVector3(0.05,0.05,0.05)
+            textNode.constraints = [billboardConstraint]
+            self.sceneView.pointOfView?.addChildNode(textNode)
+        }
+    }
+    
     private func createImageNode(_ image: UIImage, position: SCNVector3) -> SCNNode {
         let node = SCNNode()
         let scale: CGFloat = 0.3
