@@ -17,9 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLn-Sz-XlQ">
-                                <rect key="frame" x="152" y="44" width="592" height="301"/>
+                                <rect key="frame" x="244" y="43" width="592" height="301"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40j-hg-q0y">
+                                <rect key="frame" x="87" y="170" width="134" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="mouitido"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VSo-Ya-1U3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -34,7 +39,7 @@
         <scene sceneID="qD8-sQ-cUj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7bh-x1-92i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyProfile" image="person.crop.circle" selectedImage="person.crop.circle" catalog="system" id="HDg-hA-FCD">
+                    <tabBarItem key="tabBarItem" title="MyProfile" image="person.crop.circle" catalog="system" selectedImage="person.crop.circle" id="HDg-hA-FCD">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -54,8 +59,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mouitido" width="130.5" height="46.5"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
-        <image name="person.crop.circle" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
