@@ -22,6 +22,11 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         let scene = SCNScene()
         sceneView.scene = scene
         LoadingView.isHidden = true
+        let image = UIImage(named:"License")!
+        let image2 = UIImage(named:"License_Blue")!
+        
+        setImageToScene(image: image,x:-0.2)
+        setImageToScene(image: image2,x:0.2)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +60,27 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         if let frame = self.sceneView.session.currentFrame {
+        }
+    }
+    private func createImageNode(_ image: UIImage, position: SCNVector3) -> SCNNode {
+        let node = SCNNode()
+        let scale: CGFloat = 0.3
+        let geometry = SCNPlane(width: image.size.width * scale / image.size.height, height: scale)
+        geometry.firstMaterial?.diffuse.contents = image
+        node.geometry = geometry
+        node.position = position
+        return node
+    }
+    
+    func setImageToScene(image: UIImage,x:Float) {
+        if let camera = sceneView.pointOfView {
+            let billboardConstraint = SCNBillboardConstraint()
+            billboardConstraint.freeAxes = SCNBillboardAxis.Y
+            let position = SCNVector3(x: x, y: 0, z: -0.5)
+            let convertPosition = camera.convertPosition(position, to: nil)
+            let imageNode = createImageNode(image, position: convertPosition)
+            imageNode.constraints = [billboardConstraint]
+            self.sceneView.scene.rootNode.addChildNode(imageNode)
         }
     }
     }
