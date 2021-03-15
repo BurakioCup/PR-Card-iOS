@@ -129,6 +129,10 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
                 self.LoadingView.isHidden = true
                 return
             }
+            self.updateDrawLayer()
+            if let drawLayer = self.drawLayer {
+                self.draw(barcode: result, onImageLayer: drawLayer)
+            }
             if let value = result.payloadStringValue {
                 //MARK: QRコードから取得したURLを用いたサーバとの通信処理
                 self.LoadingView.isHidden = false
@@ -137,5 +141,52 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         }
     }
     
+    func updateDrawLayer(){
+        let layer = CALayer()
+        if let drawLayer = self.drawLayer {
+            drawLayer.sublayers?.forEach({ layer in
+                layer.removeFromSuperlayer()
+            })
+        }
+        layer.bounds = self.sceneView.bounds
+        layer.anchorPoint = CGPoint.zero
+        layer.opacity = 0.5
+        self.view.layer.addSublayer(layer)
+        self.drawLayer = layer
+    }
+    
+    func draw(barcode: VNRectangleObservation, onImageLayer drawlayer: CALayer) {
+        CATransaction.begin()
+        let rectLayer = shapeLayerRect(color: .blue, observation: barcode)
+        // Add to pathLayer on top of image.
+        drawlayer.addSublayer(rectLayer)
+        CATransaction.commit()
+    }
+    
+    fileprivate func shapeLayerRect(color: UIColor, observation: VNRectangleObservation) -> CAShapeLayer {
+        // Create a new layer.
+        let layer = CAShapeLayer()
+        guard let drawBounds = self.drawLayer?.bounds else { return layer }
+        let orientation = UIApplication.shared.statusBarOrientation
+        guard let arTransform = self.sceneView.session.currentFrame?.displayTransform(for: orientation, viewportSize: drawBounds.size) else { return layer }
+        let affineTransform = CGAffineTransform(scaleX: drawBounds.width, y: drawBounds.height)
+        let convertedTopLeft = observation.topLeft.applying(arTransform).applying(affineTransform)
+        let convertedTopRight = observation.topRight.applying(arTransform).applying(affineTransform)
+        let convertedBottomLeft = observation.bottomLeft.applying(arTransform).applying(affineTransform)
+        let convertedBottomRight = observation.bottomRight.applying(arTransform).applying(affineTransform)
+        
+        let linePath = UIBezierPath()
+        linePath.move(to: convertedTopLeft)
+        linePath.addLine(to: convertedTopRight)
+        linePath.addLine(to: convertedBottomRight)
+        linePath.addLine(to: convertedBottomLeft)
+        linePath.addLine(to: convertedTopLeft)
+        linePath.close()
+        layer.fillColor = UIColor.clear.cgColor
+        layer.strokeColor = color.cgColor
+        layer.lineWidth = 5
+        layer.path = linePath.cgPath
+        
+        return layer
     }
 }
