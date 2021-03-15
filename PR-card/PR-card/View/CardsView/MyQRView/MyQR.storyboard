@@ -11,7 +11,7 @@
         <!--PR-card-->
         <scene sceneID="QzB-pC-WeA">
             <objects>
-                <viewController id="4S7-uu-J53" customClass="MyQRViewController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Next" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4S7-uu-J53" customClass="MyQRViewController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gfA-ot-zlv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
