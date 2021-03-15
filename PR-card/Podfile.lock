@@ -1,16 +1,22 @@
 PODS:
   - Alamofire (5.2.2)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - Charts
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Charts
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
 
-PODFILE CHECKSUM: 5abac4b1575a359df8f2b7fbf8309c3e015ba37e
+PODFILE CHECKSUM: 6c83e3d77b7e2a43d0d1dd1aadd259c71f64c553
 
 COCOAPODS: 1.10.0.beta.2
