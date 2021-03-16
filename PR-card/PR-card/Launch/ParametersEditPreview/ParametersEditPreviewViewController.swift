@@ -9,11 +9,19 @@ import UIKit
 
 class ParametersEditPreviewViewController: UIViewController {
 
+    @IBOutlet weak var userStatusImage: UIImageView!
+    let userDefaults = UserDefaults.standard
+    let statusImageDataKey = "statusImage"
+    var photo: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //画面向きを左横画面でセットする
         UIDevice.current.setValue(4, forKey: "orientation")
+        guard let data = userDefaults.data(forKey: statusImageDataKey) else { return }
+        photo = UIImage(data: data)
+        userStatusImage.image = photo
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
