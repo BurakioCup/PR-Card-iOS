@@ -55,6 +55,7 @@
 		44AF48362600F2A9008C2171 /* CardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF48352600F2A9008C2171 /* CardsModel.swift */; };
 		44AF483C2600F318008C2171 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF483A2600F318008C2171 /* CardsPresenter.swift */; };
 		44AF483D2600F318008C2171 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF483B2600F318008C2171 /* SignupPresenter.swift */; };
+		44AF485126010743008C2171 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF485026010743008C2171 /* SignupModel.swift */; };
 		44B5BC0D25F6479100141E75 /* SettingUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5BC0C25F6479100141E75 /* SettingUserNameViewController.swift */; };
 		44B5BC1525F647EA00141E75 /* SettingUserName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B5BC1425F647EA00141E75 /* SettingUserName.storyboard */; };
 		44B5BC1E25F65C4A00141E75 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */; };
@@ -137,6 +138,7 @@
 		44AF48352600F2A9008C2171 /* CardsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
 		44AF483A2600F318008C2171 /* CardsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
 		44AF483B2600F318008C2171 /* SignupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
+		44AF485026010743008C2171 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
 		44B5BC0C25F6479100141E75 /* SettingUserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUserNameViewController.swift; sourceTree = "<group>"; };
 		44B5BC1425F647EA00141E75 /* SettingUserName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingUserName.storyboard; sourceTree = "<group>"; };
 		44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				44AF48352600F2A9008C2171 /* CardsModel.swift */,
+				44AF485026010743008C2171 /* SignupModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				44392D3125F475E800110324 /* CardsViewCell.swift in Sources */,
 				44392CAF25F46E6400110324 /* SceneDelegate.swift in Sources */,
 				445CFD2925F67C830070C999 /* ParametersEditPreviewViewController.swift in Sources */,
+				44AF485126010743008C2171 /* SignupModel.swift in Sources */,
 				4495EC0525FF58950012256A /* ParametersItemIntroductionViewController.swift in Sources */,
 				445CFD4525F682DD0070C999 /* UserInfoPreviewViewController.swift in Sources */,
 				445CFD3725F67E800070C999 /* SettingUserPhotoViewController.swift in Sources */,
@@ -930,7 +934,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DX3FKMWYLL;
 				INFOPLIST_FILE = "PR-card/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -950,7 +954,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DX3FKMWYLL;
 				INFOPLIST_FILE = "PR-card/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
