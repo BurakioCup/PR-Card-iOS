@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3V8-3N-8ln">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,28 +13,136 @@
             <objects>
                 <viewController id="AVf-en-Qbz" customClass="QRReaderViewController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="00J-1e-Pa4">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0o-oH-JUP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arscnView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LLm-gI-K5Z">
+                                <rect key="frame" x="12" y="63.5" width="50" height="45"/>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="0Yg-GX-JvP"/>
+                                    <constraint firstAttribute="height" constant="50" id="bUj-iX-AlX"/>
+                                    <constraint firstAttribute="height" constant="50" id="ofM-q3-AoS"/>
+                                    <constraint firstAttribute="width" constant="50" id="vR3-s9-ukj"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Yg-GX-JvP"/>
+                                        <exclude reference="ofM-q3-AoS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0Yg-GX-JvP"/>
+                                        <exclude reference="bUj-iX-AlX"/>
+                                        <include reference="ofM-q3-AoS"/>
+                                        <exclude reference="vR3-s9-ukj"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZG-7e-akM" customClass="LoadingView" customModule="PR_card" customModuleProvider="target">
+                                <rect key="frame" x="57" y="157" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TwV-97-E45"/>
+                                    <constraint firstAttribute="width" constant="300" id="WEN-1s-CNT"/>
+                                    <constraint firstAttribute="width" constant="300" id="iSa-1J-Z3B"/>
+                                    <constraint firstAttribute="height" constant="50" id="y49-yf-bQK"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="iSa-1J-Z3B"/>
+                                        <exclude reference="y49-yf-bQK"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="WEN-1s-CNT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="TwV-97-E45"/>
+                                        <exclude reference="WEN-1s-CNT"/>
+                                        <include reference="iSa-1J-Z3B"/>
+                                        <include reference="y49-yf-bQK"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gtZ-Bv-0dK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T0o-oH-JUP" firstAttribute="top" secondItem="00J-1e-Pa4" secondAttribute="top" id="1WY-Me-pZh"/>
+                            <constraint firstItem="MZG-7e-akM" firstAttribute="top" secondItem="gtZ-Bv-0dK" secondAttribute="top" constant="17" id="7GO-Eg-dcM"/>
+                            <constraint firstItem="MZG-7e-akM" firstAttribute="top" secondItem="LLm-gI-K5Z" secondAttribute="bottom" constant="36" id="8f7-hI-gpZ"/>
+                            <constraint firstItem="MZG-7e-akM" firstAttribute="top" secondItem="LLm-gI-K5Z" secondAttribute="bottom" constant="46" id="BER-XM-4C3"/>
+                            <constraint firstItem="LLm-gI-K5Z" firstAttribute="leading" secondItem="00J-1e-Pa4" secondAttribute="leading" constant="12" id="L6S-2W-OXM"/>
+                            <constraint firstAttribute="bottom" secondItem="T0o-oH-JUP" secondAttribute="bottom" id="OW6-7f-nle"/>
+                            <constraint firstItem="gtZ-Bv-0dK" firstAttribute="trailing" secondItem="MZG-7e-akM" secondAttribute="trailing" constant="254" id="PEp-JZ-LC2"/>
+                            <constraint firstItem="gtZ-Bv-0dK" firstAttribute="bottom" secondItem="MZG-7e-akM" secondAttribute="bottom" constant="277" id="RqT-ts-NQS"/>
+                            <constraint firstItem="LLm-gI-K5Z" firstAttribute="top" secondItem="gtZ-Bv-0dK" secondAttribute="top" constant="17" id="W0K-Kv-7VP"/>
+                            <constraint firstItem="LLm-gI-K5Z" firstAttribute="top" secondItem="gtZ-Bv-0dK" secondAttribute="top" constant="17" id="W21-Qv-mPV"/>
+                            <constraint firstItem="MZG-7e-akM" firstAttribute="leading" secondItem="gtZ-Bv-0dK" secondAttribute="leading" constant="254" id="WHY-F7-gxg"/>
+                            <constraint firstAttribute="trailing" secondItem="T0o-oH-JUP" secondAttribute="trailing" id="ZDO-eA-NVW"/>
+                            <constraint firstItem="T0o-oH-JUP" firstAttribute="leading" secondItem="00J-1e-Pa4" secondAttribute="leading" id="aak-ky-cKd"/>
+                            <constraint firstItem="gtZ-Bv-0dK" firstAttribute="trailing" secondItem="MZG-7e-akM" secondAttribute="trailing" constant="57" id="iFm-Ia-xC7"/>
+                            <constraint firstItem="MZG-7e-akM" firstAttribute="leading" secondItem="gtZ-Bv-0dK" secondAttribute="leading" constant="57" id="tuV-vw-y1Q"/>
+                            <constraint firstItem="MZG-7e-akM" firstAttribute="top" secondItem="LLm-gI-K5Z" secondAttribute="bottom" constant="36" id="xBP-Rx-Ia3"/>
+                            <constraint firstItem="LLm-gI-K5Z" firstAttribute="leading" secondItem="gtZ-Bv-0dK" secondAttribute="leading" constant="12" id="xBZ-pw-b93"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="iFm-Ia-xC7"/>
+                                <exclude reference="W21-Qv-mPV"/>
+                                <exclude reference="xBZ-pw-b93"/>
+                                <exclude reference="8f7-hI-gpZ"/>
+                                <exclude reference="BER-XM-4C3"/>
+                                <exclude reference="tuV-vw-y1Q"/>
+                                <exclude reference="xBP-Rx-Ia3"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="PEp-JZ-LC2"/>
+                                <exclude reference="RqT-ts-NQS"/>
+                                <include reference="iFm-Ia-xC7"/>
+                                <exclude reference="L6S-2W-OXM"/>
+                                <exclude reference="W0K-Kv-7VP"/>
+                                <include reference="W21-Qv-mPV"/>
+                                <include reference="xBZ-pw-b93"/>
+                                <exclude reference="7GO-Eg-dcM"/>
+                                <exclude reference="8f7-hI-gpZ"/>
+                                <include reference="BER-XM-4C3"/>
+                                <exclude reference="WHY-F7-gxg"/>
+                                <include reference="tuV-vw-y1Q"/>
+                                <exclude reference="xBP-Rx-Ia3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="PR-card" id="DQT-h8-dkg"/>
+                    <connections>
+                        <outlet property="LoadingView" destination="MZG-7e-akM" id="h3t-td-hJV"/>
+                        <outlet property="sceneView" destination="T0o-oH-JUP" id="XuN-4O-wuz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6js-X9-Tcs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1210.144927536232" y="127.90178571428571"/>
+            <point key="canvasLocation" x="1208.6956521739132" y="127.23214285714285"/>
         </scene>
         <!--QRReader-->
         <scene sceneID="4bd-sc-UtY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3V8-3N-8ln" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="QRReader" image="qrcode.viewfinder" selectedImage="qrcode.viewfinder" catalog="system" id="0tl-z4-sgr">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3V8-3N-8ln" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="QRReader" image="qrcode.viewfinder" catalog="system" selectedImage="qrcode.viewfinder" id="0tl-z4-sgr">
                         <inset key="imageInsets" minX="0.0" minY="-12" maxX="0.0" maxY="-13"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hSy-g0-2zC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -48,10 +156,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
-        <image name="qrcode.viewfinder" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
