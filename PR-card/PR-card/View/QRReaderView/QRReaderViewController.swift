@@ -18,7 +18,6 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         super.viewDidLoad()
         sceneView.delegate = self
         sceneView.session.delegate = self
-        sceneView.showsStatistics = true
         let scene = SCNScene()
         sceneView.scene = scene
         LoadingView.isHidden = true
