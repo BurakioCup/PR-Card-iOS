@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		04BA482BC232BCF9B308D7CD /* Pods_PR_card_PR_cardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3995EA67BB8E6F603F603FA /* Pods_PR_card_PR_cardUITests.framework */; };
+		150B6D0F25FF5FDE00ACE8AD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150B6D0D25FF5FDE00ACE8AD /* LoadingView.swift */; };
+		150B6D1025FF5FDE00ACE8AD /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150B6D0E25FF5FDE00ACE8AD /* LoadingView.xib */; };
 		442229FA25F8F7CB00EAAD03 /* TagsEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442229F925F8F7CB00EAAD03 /* TagsEditViewController.swift */; };
 		44222A0225F8F7EA00EAAD03 /* TagsEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44222A0125F8F7EA00EAAD03 /* TagsEdit.storyboard */; };
 		44222A0825F8FCD300EAAD03 /* TagsEditPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44222A0725F8FCD300EAAD03 /* TagsEditPreviewViewController.swift */; };
 		44222A1025F8FCF000EAAD03 /* TagsEditPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44222A0F25F8FCF000EAAD03 /* TagsEditPreview.storyboard */; };
-		150B6D0F25FF5FDE00ACE8AD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150B6D0D25FF5FDE00ACE8AD /* LoadingView.swift */; };
-		150B6D1025FF5FDE00ACE8AD /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150B6D0E25FF5FDE00ACE8AD /* LoadingView.xib */; };
 		44392CAD25F46E6400110324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392CAC25F46E6400110324 /* AppDelegate.swift */; };
 		44392CAF25F46E6400110324 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392CAE25F46E6400110324 /* SceneDelegate.swift */; };
 		44392CB125F46E6400110324 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392CB025F46E6400110324 /* ViewController.swift */; };
@@ -52,6 +52,9 @@
 		4495EC0A25FF58DC0012256A /* ParametersItemIntroduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4495EC0925FF58DC0012256A /* ParametersItemIntroduction.storyboard */; };
 		4495EC1025FF5B3E0012256A /* ParametersItemSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495EC0F25FF5B3E0012256A /* ParametersItemSettingViewController.swift */; };
 		4495EC1825FF5B520012256A /* ParametersItemSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4495EC1725FF5B520012256A /* ParametersItemSetting.storyboard */; };
+		44AF48362600F2A9008C2171 /* CardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF48352600F2A9008C2171 /* CardsModel.swift */; };
+		44AF483C2600F318008C2171 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF483A2600F318008C2171 /* CardsPresenter.swift */; };
+		44AF483D2600F318008C2171 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF483B2600F318008C2171 /* SignupPresenter.swift */; };
 		44B5BC0D25F6479100141E75 /* SettingUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5BC0C25F6479100141E75 /* SettingUserNameViewController.swift */; };
 		44B5BC1525F647EA00141E75 /* SettingUserName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B5BC1425F647EA00141E75 /* SettingUserName.storyboard */; };
 		44B5BC1E25F65C4A00141E75 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */; };
@@ -131,6 +134,9 @@
 		4495EC0925FF58DC0012256A /* ParametersItemIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParametersItemIntroduction.storyboard; sourceTree = "<group>"; };
 		4495EC0F25FF5B3E0012256A /* ParametersItemSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersItemSettingViewController.swift; sourceTree = "<group>"; };
 		4495EC1725FF5B520012256A /* ParametersItemSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParametersItemSetting.storyboard; sourceTree = "<group>"; };
+		44AF48352600F2A9008C2171 /* CardsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
+		44AF483A2600F318008C2171 /* CardsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
+		44AF483B2600F318008C2171 /* SignupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
 		44B5BC0C25F6479100141E75 /* SettingUserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUserNameViewController.swift; sourceTree = "<group>"; };
 		44B5BC1425F647EA00141E75 /* SettingUserName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingUserName.storyboard; sourceTree = "<group>"; };
 		44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
@@ -270,6 +276,8 @@
 		44392CF725F471FF00110324 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				44AF483A2600F318008C2171 /* CardsPresenter.swift */,
+				44AF483B2600F318008C2171 /* SignupPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -277,6 +285,7 @@
 		44392CF825F4724C00110324 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				44AF48352600F2A9008C2171 /* CardsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -726,7 +735,10 @@
 				150B6D0F25FF5FDE00ACE8AD /* LoadingView.swift in Sources */,
 				44392D1625F4747F00110324 /* MyProfileViewController.swift in Sources */,
 				4495EC1025FF5B3E0012256A /* ParametersItemSettingViewController.swift in Sources */,
+				44AF483D2600F318008C2171 /* SignupPresenter.swift in Sources */,
 				442229FA25F8F7CB00EAAD03 /* TagsEditViewController.swift in Sources */,
+				44AF483C2600F318008C2171 /* CardsPresenter.swift in Sources */,
+				44AF48362600F2A9008C2171 /* CardsModel.swift in Sources */,
 				44392D0225F4733000110324 /* CardsViewController.swift in Sources */,
 				44392CB125F46E6400110324 /* ViewController.swift in Sources */,
 				44B5BC0D25F6479100141E75 /* SettingUserNameViewController.swift in Sources */,
@@ -918,7 +930,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DX3FKMWYLL;
 				INFOPLIST_FILE = "PR-card/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -938,7 +950,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DX3FKMWYLL;
 				INFOPLIST_FILE = "PR-card/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
