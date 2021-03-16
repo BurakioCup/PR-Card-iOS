@@ -19,7 +19,6 @@ class CardsPresenter{
         }
         print(requestURL)
         
-        UserDefaults.standard.set("taketo", forKey: "usertoken")
         var token = UserDefaults.standard.string(forKey: "usertoken")
         
         let parameters: HTTPHeaders = [
