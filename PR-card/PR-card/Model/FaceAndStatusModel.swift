@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct FaceAndStatus: Codable {
+    let faceImage: String?
+    let statusImage: String?
+}
