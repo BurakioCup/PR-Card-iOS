@@ -62,6 +62,8 @@
 		A0C4F067F66706E8E1C032C5 /* Pods_PR_card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA93C09E54A7136615A4B74 /* Pods_PR_card.framework */; };
 		AB4C8BE226011391006D535F /* MyQRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4C8BE126011390006D535F /* MyQRModel.swift */; };
 		AB4C8BF42601144A006D535F /* MyQRPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4C8BF32601144A006D535F /* MyQRPresenter.swift */; };
+		AB4C8BFC26012E42006D535F /* MyProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4C8BFB26012E42006D535F /* MyProfileModel.swift */; };
+		AB4C8C1E260152B8006D535F /* MyProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4C8C1D260152B8006D535F /* MyProfilePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +148,8 @@
 		A5803F5AD6DD0E80E27236F1 /* Pods-PR-card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card.release.xcconfig"; path = "Target Support Files/Pods-PR-card/Pods-PR-card.release.xcconfig"; sourceTree = "<group>"; };
 		AB4C8BE126011390006D535F /* MyQRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyQRModel.swift; path = ../../../../../../Downloads/MyQRModel.swift; sourceTree = "<group>"; };
 		AB4C8BF32601144A006D535F /* MyQRPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyQRPresenter.swift; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/MyQRPresenter.swift"; sourceTree = "<group>"; };
+		AB4C8BFB26012E42006D535F /* MyProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyProfileModel.swift; path = ../../../../../../Downloads/MyProfileModel.swift; sourceTree = "<group>"; };
+		AB4C8C1D260152B8006D535F /* MyProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyProfilePresenter.swift; path = ../../../../../../Downloads/MyProfilePresenter.swift; sourceTree = "<group>"; };
 		C022EC84B8C1E666A7EB4BB6 /* Pods-PR-card-PR-cardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card-PR-cardUITests.debug.xcconfig"; path = "Target Support Files/Pods-PR-card-PR-cardUITests/Pods-PR-card-PR-cardUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D879F00EABA6E9CDF73F2D01 /* Pods-PR-cardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-cardTests.release.xcconfig"; path = "Target Support Files/Pods-PR-cardTests/Pods-PR-cardTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3995EA67BB8E6F603F603FA /* Pods_PR_card_PR_cardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PR_card_PR_cardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,6 +286,7 @@
 			children = (
 				44AF483A2600F318008C2171 /* CardsPresenter.swift */,
 				AB4C8BF32601144A006D535F /* MyQRPresenter.swift */,
+				AB4C8C1D260152B8006D535F /* MyProfilePresenter.swift */,
 				44AF483B2600F318008C2171 /* SignupPresenter.swift */,
 			);
 			path = Presenter;
@@ -292,6 +297,7 @@
 			children = (
 				44AF48352600F2A9008C2171 /* CardsModel.swift */,
 				AB4C8BE126011390006D535F /* MyQRModel.swift */,
+				AB4C8BFB26012E42006D535F /* MyProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -736,6 +742,7 @@
 				44222A0825F8FCD300EAAD03 /* TagsEditPreviewViewController.swift in Sources */,
 				44392D2225F4755200110324 /* MyQRViewController.swift in Sources */,
 				44392D4025F47B6900110324 /* OtherDetailCardsViewController.swift in Sources */,
+				AB4C8C1E260152B8006D535F /* MyProfilePresenter.swift in Sources */,
 				44392D5525F4929F00110324 /* MainTabBarController.swift in Sources */,
 				44392D7C25F4A35900110324 /* CreateAccountViewController.swift in Sources */,
 				150B6D0F25FF5FDE00ACE8AD /* LoadingView.swift in Sources */,
@@ -748,6 +755,7 @@
 				44AF48362600F2A9008C2171 /* CardsModel.swift in Sources */,
 				44392D0225F4733000110324 /* CardsViewController.swift in Sources */,
 				44392CB125F46E6400110324 /* ViewController.swift in Sources */,
+				AB4C8BFC26012E42006D535F /* MyProfileModel.swift in Sources */,
 				44B5BC0D25F6479100141E75 /* SettingUserNameViewController.swift in Sources */,
 				445CFD1B25F6752B0070C999 /* ParametersEditViewController.swift in Sources */,
 				44392D0C25F4739C00110324 /* QRReaderViewController.swift in Sources */,
