@@ -22,7 +22,7 @@ class UserInfoPreviewViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         userPhoto.image = photo
-        let userPhotoData = photo?.pngData()
+        let userPhotoData = photo?.pngData()?.base64EncodedString(options: .lineLength76Characters)
         userDefaults.setValue(userPhotoData, forKey: userPhotoKey)
         userNameLabel.text = userDefaults.string(forKey: userNamekey)
     }
