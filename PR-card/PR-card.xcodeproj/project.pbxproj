@@ -52,6 +52,8 @@
 		4495EC0A25FF58DC0012256A /* ParametersItemIntroduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4495EC0925FF58DC0012256A /* ParametersItemIntroduction.storyboard */; };
 		4495EC1025FF5B3E0012256A /* ParametersItemSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495EC0F25FF5B3E0012256A /* ParametersItemSettingViewController.swift */; };
 		4495EC1825FF5B520012256A /* ParametersItemSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4495EC1725FF5B520012256A /* ParametersItemSetting.storyboard */; };
+		44A1D8C5260138D300C4301E /* FaceAndStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A1D8C4260138D300C4301E /* FaceAndStatusModel.swift */; };
+		44A1D8CA260145CC00C4301E /* ParametersEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A1D8C9260145CC00C4301E /* ParametersEditPresenter.swift */; };
 		44AF48362600F2A9008C2171 /* CardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF48352600F2A9008C2171 /* CardsModel.swift */; };
 		44AF483C2600F318008C2171 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF483A2600F318008C2171 /* CardsPresenter.swift */; };
 		44AF483D2600F318008C2171 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF483B2600F318008C2171 /* SignupPresenter.swift */; };
@@ -136,6 +138,8 @@
 		4495EC0925FF58DC0012256A /* ParametersItemIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParametersItemIntroduction.storyboard; sourceTree = "<group>"; };
 		4495EC0F25FF5B3E0012256A /* ParametersItemSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersItemSettingViewController.swift; sourceTree = "<group>"; };
 		4495EC1725FF5B520012256A /* ParametersItemSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParametersItemSetting.storyboard; sourceTree = "<group>"; };
+		44A1D8C4260138D300C4301E /* FaceAndStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAndStatusModel.swift; sourceTree = "<group>"; };
+		44A1D8C9260145CC00C4301E /* ParametersEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersEditPresenter.swift; sourceTree = "<group>"; };
 		44AF48352600F2A9008C2171 /* CardsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
 		44AF483A2600F318008C2171 /* CardsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
 		44AF483B2600F318008C2171 /* SignupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 			children = (
 				44AF483A2600F318008C2171 /* CardsPresenter.swift */,
 				44AF483B2600F318008C2171 /* SignupPresenter.swift */,
+				44A1D8C9260145CC00C4301E /* ParametersEditPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 			children = (
 				44AF48352600F2A9008C2171 /* CardsModel.swift */,
 				44AF485026010743008C2171 /* SignupModel.swift */,
+				44A1D8C4260138D300C4301E /* FaceAndStatusModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -733,6 +739,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A1D8CA260145CC00C4301E /* ParametersEditPresenter.swift in Sources */,
 				44222A0825F8FCD300EAAD03 /* TagsEditPreviewViewController.swift in Sources */,
 				44392D2225F4755200110324 /* MyQRViewController.swift in Sources */,
 				44392D4025F47B6900110324 /* OtherDetailCardsViewController.swift in Sources */,
@@ -740,6 +747,7 @@
 				44392D7C25F4A35900110324 /* CreateAccountViewController.swift in Sources */,
 				44AF485626011E23008C2171 /* UIImageResize.swift in Sources */,
 				150B6D0F25FF5FDE00ACE8AD /* LoadingView.swift in Sources */,
+				44A1D8C5260138D300C4301E /* FaceAndStatusModel.swift in Sources */,
 				44392D1625F4747F00110324 /* MyProfileViewController.swift in Sources */,
 				4495EC1025FF5B3E0012256A /* ParametersItemSettingViewController.swift in Sources */,
 				44AF483D2600F318008C2171 /* SignupPresenter.swift in Sources */,
