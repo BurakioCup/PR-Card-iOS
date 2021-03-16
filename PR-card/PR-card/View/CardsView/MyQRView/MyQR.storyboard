@@ -29,6 +29,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="PR-card" id="Fp7-6w-oTV"/>
+                    <connections>
+                        <outlet property="QRimageView" destination="zal-D3-xI0" id="rbC-Ok-1kh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajh-aH-Sit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
