@@ -35,7 +35,7 @@ class SignupPresenter {
                 guard let data = response.data else { return }
                 let decoder = JSONDecoder()
                 let userDefaults = UserDefaults.standard
-                let tokenKey = "token"
+                let tokenKey = "usertoken"
                 let loginIDKey = "loginID"
                 guard let signupModel = try? decoder.decode(Signup.self, from: data) else { return }
                 guard let token: String = signupModel.token else { return }
