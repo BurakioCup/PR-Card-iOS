@@ -15,8 +15,10 @@ class ParametersEditViewController: UIViewController {
     var slidarNumerical: Int = 0
     public var subjects = Array<String>(repeating: "", count:5) // レーダーチャートの項目
     var set: RadarChartDataSet!
-    //点数
-    let array: [Double] = [50.0, 50.0, 50.0, 50.0, 50.0]
+    var array: [Double] = [50.0, 50.0, 50.0, 50.0, 50.0] // レーダーチャート各項目の値
+    let parametersEditPresenter = ParametersEditPresenter()
+    let dispatchGroup = DispatchGroup() // 非同期のグループ
+    let dispatchQueue = DispatchQueue(label: "queue", attributes: .concurrent) // 並列で実行
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,6 @@ class ParametersEditViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        print(subjects)
         setChart(dataPoints: subjects, values: array)
     }
     
@@ -69,6 +70,7 @@ class ParametersEditViewController: UIViewController {
         }
         let chartDataSet = RadarChartDataSet(entries: dataEntries, label: "hoge")
         let chartData = RadarChartData(dataSet: chartDataSet)
+        let customFormater = CustomFormatter1()
         
         radarChartView.yAxis.labelCount = 10
         radarChartView.yAxis.axisMinimum = 0.0
@@ -78,7 +80,6 @@ class ParametersEditViewController: UIViewController {
         
         radarChartView.legend.enabled = false
         
-        let customFormater = CustomFormatter1()
         customFormater.labels =  subjects
         radarChartView.xAxis.valueFormatter = customFormater
         
@@ -89,23 +90,24 @@ class ParametersEditViewController: UIViewController {
     }
     
     @IBAction func toParametersEditPreview(_ sender: Any) {
+        var numbersInt: [Int] = []
+        numbersInt = array.map({ (value: Double) -> Int in
+            return Int(value)
+        })
+        
+        self.parametersEditPresenter.cardOverview(itemName: self.subjects, itemScore: numbersInt)
+        
         let storyboard = UIStoryboard(name: "ParametersEditPreview", bundle: nil)
         let parametersEditPreviewVC = storyboard.instantiateViewController(identifier: "ParametersEditPreview") as ParametersEditPreviewViewController
-        navigationController?.pushViewController(parametersEditPreviewVC, animated: true)
-    }
-}
-
-// 各ポイントの最後に値を表示しない
-class RadarChartValueFormatter: ParametersEditViewController, IValueFormatter {
-    public func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String{
-        return subjects[Int(value) % subjects.count]
+        self.navigationController?.pushViewController(parametersEditPreviewVC, animated: true)
     }
 }
 
 extension ParametersEditViewController: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print(entry.y)
         entry.y = Double(slidarNumerical)
+        array[Int(highlight.x)] = entry.y // 配列のデータを更新
+        print(array)
         radarChartView.animate(yAxisDuration: 2.0)
     }
 }

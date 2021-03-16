@@ -39,11 +39,18 @@
                                     <action selector="finishButton:" destination="8ZP-w3-K2U" eventType="touchUpInside" id="txE-IA-0vZ"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oFW-lR-Ut6">
+                                <rect key="frame" x="477" y="64" width="359" height="329"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iPx-tc-dgG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="PR-card" id="8De-68-lcz"/>
+                    <connections>
+                        <outlet property="userStatusImage" destination="oFW-lR-Ut6" id="YVC-nR-gHd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1f-LC-yEq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

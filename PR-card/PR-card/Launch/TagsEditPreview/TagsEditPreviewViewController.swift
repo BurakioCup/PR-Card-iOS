@@ -9,18 +9,35 @@ import UIKit
 
 class TagsEditPreviewViewController: UIViewController {
 
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var firstHashTagLabel: UILabel!
     @IBOutlet weak var secondHashTagLabel: UILabel!
     @IBOutlet weak var ThirdHashTagLabel: UILabel!
     @IBOutlet weak var fourthHashTagLabel: UILabel!
     @IBOutlet weak var commentContentLabel: UILabel!
+    let userDefaults = UserDefaults.standard
+    let userNamekey = "userName"
+    let nickNameKey = "nickName"
+    let first = "first"
+    let second = "second"
+    let third = "third"
+    let fourth = "fourth"
+    let fifth = "fifth"
+    let freeComment = "freeComment"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //画面向きを左横画面でセットする
         UIDevice.current.setValue(4, forKey: "orientation")
+        userNameLabel.text = userDefaults.string(forKey: userNamekey)
+        nickNameLabel.text = userDefaults.string(forKey: nickNameKey)
+        firstHashTagLabel.text = userDefaults.string(forKey: first)
+        secondHashTagLabel.text = userDefaults.string(forKey: second)
+        ThirdHashTagLabel.text = userDefaults.string(forKey: third)
+        fourthHashTagLabel.text = userDefaults.string(forKey: fourth)
+        commentContentLabel.text = userDefaults.string(forKey: freeComment)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

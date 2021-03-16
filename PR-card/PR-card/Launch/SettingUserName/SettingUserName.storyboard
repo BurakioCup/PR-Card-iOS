@@ -63,6 +63,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Status" id="a8E-RI-tMX"/>
+                    <connections>
+                        <outlet property="userNameTextField" destination="V79-9E-F6D" id="rm7-GU-IJs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PcC-l5-stt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

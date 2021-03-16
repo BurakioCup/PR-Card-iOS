@@ -59,6 +59,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Account" id="d0g-La-gAR"/>
+                    <connections>
+                        <outlet property="idTextField" destination="vJ8-IO-UTk" id="Rae-LM-qGY"/>
+                        <outlet property="passwordTextField" destination="dot-rx-fJ5" id="yWW-yX-L5A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50x-WU-Cou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
