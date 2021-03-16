@@ -104,6 +104,7 @@
                         <outlet property="fourthHashTagLabel" destination="u7f-0h-DNh" id="tyE-vK-wfo"/>
                         <outlet property="nickNameLabel" destination="bsl-sK-swA" id="bsP-1O-bdV"/>
                         <outlet property="secondHashTagLabel" destination="GMe-aG-Fae" id="dh3-vn-WoT"/>
+                        <outlet property="voiceButton" destination="gWd-Tf-NyG" id="yDf-PU-mrC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPD-Mu-J4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
