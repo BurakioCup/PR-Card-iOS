@@ -22,8 +22,52 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         sceneView.scene = scene
         LoadingView.isHidden = true
         
-        setImageToScene(image: image,x:-0.2)
-        setImageToScene(image: image2,x:0.2)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let location = touches.first?.location(in: sceneView),
+              let result = sceneView.hitTest(location, options: nil).first else {
+            return
+        }
+        guard let camera = sceneView.pointOfView else {
+            return
+        }
+        let node = result.node
+        var x: Float = 0
+        var y: Float = 0
+        let z: Float = -3
+        let targetPosCamera = SCNVector3Make(0, 0, -1)
+        let zoomInPotision = camera.convertPosition(targetPosCamera, to: nil)
+        if let touch = touches.first{
+            if touch.tapCount == 1{
+                let zoomInAction = SCNAction.move(to: zoomInPotision, duration: 0.8)
+                node.runAction(zoomInAction)
+            }
+            if touch.tapCount == 2{
+                switch node.name {
+                    case "face":
+                        x = -0.3
+                        y = 0.2
+                    case "name":
+                        x = 0.3
+                        y = 0.2
+                    case "free":
+                        x = 0.1
+                        y = -0.5
+                    case "status":
+                        x = -0.4
+                        y = -0.2
+                    case "tag":
+                        x = 0.4
+                        y = -0.2
+                    default:
+                        break
+                }
+                let zoomOutPosition = SCNVector3Make(camera.position.x+x,camera.position.y+y,camera.position.z+z)
+                let zoomOutAction = SCNAction.move(to: zoomOutPosition, duration: 0.8)
+                node.runAction(zoomOutAction)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
