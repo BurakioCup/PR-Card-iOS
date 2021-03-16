@@ -13,5 +13,4 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         selectedIndex = 1 // デフォルト画面を設定
     }
-    
 }
