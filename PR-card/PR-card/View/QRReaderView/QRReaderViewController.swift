@@ -58,6 +58,10 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        sceneView.session.pause()
+    }
+    
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         if let frame = self.sceneView.session.currentFrame {
             findQRCode(frame: frame)
