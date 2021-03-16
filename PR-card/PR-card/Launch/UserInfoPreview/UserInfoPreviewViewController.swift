@@ -10,9 +10,15 @@ import UIKit
 class UserInfoPreviewViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userPhoto: UIImageView!
+    var photo: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        userPhoto.image = photo
     }
     
     // 再設定ボタン
