@@ -48,6 +48,8 @@
 		445CFD3F25F67E9E0070C999 /* SettingUserPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445CFD3E25F67E9E0070C999 /* SettingUserPhoto.storyboard */; };
 		445CFD4525F682DD0070C999 /* UserInfoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445CFD4425F682DD0070C999 /* UserInfoPreviewViewController.swift */; };
 		445CFD4A25F682F20070C999 /* UserInfoPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445CFD4925F682F20070C999 /* UserInfoPreview.storyboard */; };
+		44929381260167D500950BD2 /* TagsEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44929380260167D500950BD2 /* TagsEditPresenter.swift */; };
+		44929386260167F500950BD2 /* CardDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44929385260167F500950BD2 /* CardDetailsModel.swift */; };
 		4495EC0525FF58950012256A /* ParametersItemIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495EC0425FF58950012256A /* ParametersItemIntroductionViewController.swift */; };
 		4495EC0A25FF58DC0012256A /* ParametersItemIntroduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4495EC0925FF58DC0012256A /* ParametersItemIntroduction.storyboard */; };
 		4495EC1025FF5B3E0012256A /* ParametersItemSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495EC0F25FF5B3E0012256A /* ParametersItemSettingViewController.swift */; };
@@ -134,6 +136,8 @@
 		445CFD3E25F67E9E0070C999 /* SettingUserPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingUserPhoto.storyboard; sourceTree = "<group>"; };
 		445CFD4425F682DD0070C999 /* UserInfoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPreviewViewController.swift; sourceTree = "<group>"; };
 		445CFD4925F682F20070C999 /* UserInfoPreview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfoPreview.storyboard; sourceTree = "<group>"; };
+		44929380260167D500950BD2 /* TagsEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsEditPresenter.swift; sourceTree = "<group>"; };
+		44929385260167F500950BD2 /* CardDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsModel.swift; sourceTree = "<group>"; };
 		4495EC0425FF58950012256A /* ParametersItemIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersItemIntroductionViewController.swift; sourceTree = "<group>"; };
 		4495EC0925FF58DC0012256A /* ParametersItemIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParametersItemIntroduction.storyboard; sourceTree = "<group>"; };
 		4495EC0F25FF5B3E0012256A /* ParametersItemSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersItemSettingViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 				44AF483A2600F318008C2171 /* CardsPresenter.swift */,
 				44AF483B2600F318008C2171 /* SignupPresenter.swift */,
 				44A1D8C9260145CC00C4301E /* ParametersEditPresenter.swift */,
+				44929380260167D500950BD2 /* TagsEditPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				44AF48352600F2A9008C2171 /* CardsModel.swift */,
 				44AF485026010743008C2171 /* SignupModel.swift */,
 				44A1D8C4260138D300C4301E /* FaceAndStatusModel.swift */,
+				44929385260167F500950BD2 /* CardDetailsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -741,8 +747,10 @@
 			files = (
 				44A1D8CA260145CC00C4301E /* ParametersEditPresenter.swift in Sources */,
 				44222A0825F8FCD300EAAD03 /* TagsEditPreviewViewController.swift in Sources */,
+				44929386260167F500950BD2 /* CardDetailsModel.swift in Sources */,
 				44392D2225F4755200110324 /* MyQRViewController.swift in Sources */,
 				44392D4025F47B6900110324 /* OtherDetailCardsViewController.swift in Sources */,
+				44929381260167D500950BD2 /* TagsEditPresenter.swift in Sources */,
 				44392D5525F4929F00110324 /* MainTabBarController.swift in Sources */,
 				44392D7C25F4A35900110324 /* CreateAccountViewController.swift in Sources */,
 				44AF485626011E23008C2171 /* UIImageResize.swift in Sources */,
@@ -946,7 +954,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DX3FKMWYLL;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "PR-card/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -966,7 +974,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DX3FKMWYLL;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "PR-card/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
