@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct CardDetailsModel: Codable {
+    let nameImage: String?
+    let tagImage: String?
+    let freeImage: String?
+}
