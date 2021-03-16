@@ -9,9 +9,8 @@ import Foundation
 import UIKit
 
 var cell = UICollectionView()
-//サーバデプロイまでの仮値
-let userName = ["a","b","c","d","e","f","g","h","i","j","k"]
-let SaveURL = ["a","b","c","d","e","f","g","h","i","j","k"]
+
+let cardspresenter = CardsPresenter()
 
 class CardsViewController: UIViewController,UIGestureRecognizerDelegate{
 
@@ -57,23 +56,37 @@ class CardsViewController: UIViewController,UIGestureRecognizerDelegate{
     
     extension CardsViewController: UICollectionViewDataSource{
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return userName.count
+            return 5
         }
             
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardsViewCell", for: indexPath) as! CardsViewCell
             
-            let url = URL(string: (SaveURL[indexPath.row]))!
+            //非同期処理
+            cardspresenter.application(completion: { [weak self] response in
+                
+                guard let self = self else { return }
+                let Cardscell = response.cards
+                
+                guard var cardID = Cardscell[indexPath.row].cardID else { return }
+                guard var userName = Cardscell[indexPath.row].userName else { return }
+                guard var faceImage = Cardscell[indexPath.row].faceImage else { return }
+                
+                cell.userNameLabel.text = userName
+    
+                let url = URL(string: (userName))!
         
-            do {
-                let data = try Data(contentsOf: url)
-                cell.userIconImage.image = UIImage(data: data)
-            } catch let err {
-                //画像がない場合デフォルトURLセット
-                cell.userIconImage.image = UIImage(named: "sample")
-            }
+                do {
+                    let data = try Data(contentsOf: url)
+                    cell.userIconImage.image = UIImage(data: data)
+                } catch let err {
+                    //画像がない場合デフォルトURLセット
+                    cell.userIconImage.image = UIImage(named: "sample")
+                }
             
-            cell.userNameLabel.text = userName[indexPath.row]
+                
+                
+            })
             
             return cell
         }

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Foundation
+import Alamofire
+import SwiftyJSON
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = UIStoryboard(name: "MainTabBar", bundle: nil).instantiateInitialViewController()
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
