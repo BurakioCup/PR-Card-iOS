@@ -224,6 +224,12 @@ class TagsEditViewController: UIViewController {
         }
     }
     
+    @IBAction func toTagsEditPreview(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "TagsEditPreview", bundle: nil)
+        let tagsEditPreviewVC = storyboard.instantiateViewController(identifier: "TagsEditPreview") as TagsEditPreviewViewController
+        navigationController?.pushViewController(tagsEditPreviewVC, animated: true)
+    }
+    
     // 音声認識中止
     func stopLiveTranscription() {
         audioEngine.stop()
