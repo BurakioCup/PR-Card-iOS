@@ -6,6 +6,7 @@
 //
 
 import AVFoundation
+import Instructions
 import Speech
 import UIKit
 
@@ -23,7 +24,10 @@ class TagsEditViewController: UIViewController {
     var recognitionReq: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
     var isTapped = false
-    
+    var coachController = CoachMarksController()
+    private var views: [UIView] = []
+    private let messages = ["あなたのあだ名を入力", "あなたを表す単語", "あなたを表す単語", "あなたを表す単語", "あなたを表す単語", "好きなコメントを入力"]
+    var voiceRecognition: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,9 @@ class TagsEditViewController: UIViewController {
         UIDevice.current.setValue(4, forKey: "orientation")
         audioEngine = AVAudioEngine()
         voiceButton.setImage(UIImage(named: "Microphone"), for: .normal)
+        coachController.dataSource = self
+        views = [nickNameLabel, firstHashTagLabel, secondHashTagLabel, ThirdHashTagLabel, fourthHashTagLabel, commentContentLabel]
+        voiceButton.isEnabled = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +62,13 @@ class TagsEditViewController: UIViewController {
                 }
             }
         }
+        self.coachController.start(in: .window(over: self))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.coachController.stop(immediately: true)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -70,7 +84,131 @@ class TagsEditViewController: UIViewController {
         }
     }
     
+    @IBAction func nickNameLabelTap(_ sender: Any) {
+        print(nickNameLabel.text as Any)
+        voiceButton.isEnabled = true
+        
+        // 他のUILabelの枠線を消す
+        firstHashTagLabel.layer.borderWidth = 0.0
+        secondHashTagLabel.layer.borderWidth = 0.0
+        ThirdHashTagLabel.layer.borderWidth = 0.0
+        fourthHashTagLabel.layer.borderWidth = 0.0
+        commentContentLabel.layer.borderWidth = 0.0
+        
+        // 自身のUIlabelの枠線つける
+        nickNameLabel.layer.borderWidth = 1.0
+        nickNameLabel.layer.borderColor = UIColor.black.cgColor
+        nickNameLabel.layer.cornerRadius = 10.0
+        nickNameLabel.clipsToBounds = true
+        
+        guard let str = voiceRecognition else { return }
+        nickNameLabel.text = str
+    }
+    
+    @IBAction func firstHashTagTap(_ sender: Any) {
+        print(firstHashTagLabel.text as Any)
+        voiceButton.isEnabled = true
+        
+        // 他のUILabelの枠線を消す
+        nickNameLabel.layer.borderWidth = 0.0
+        secondHashTagLabel.layer.borderWidth = 0.0
+        ThirdHashTagLabel.layer.borderWidth = 0.0
+        fourthHashTagLabel.layer.borderWidth = 0.0
+        commentContentLabel.layer.borderWidth = 0.0
+        
+        // 自身のUIlabelの枠線つける
+        firstHashTagLabel.layer.borderWidth = 1.0
+        firstHashTagLabel.layer.borderColor = UIColor.black.cgColor
+        firstHashTagLabel.layer.cornerRadius = 10.0
+        firstHashTagLabel.clipsToBounds = true
+        
+        guard let str = voiceRecognition else { return }
+        firstHashTagLabel.text = str
+    }
+    
+    @IBAction func secondHashTagTap(_ sender: Any) {
+        print(secondHashTagLabel.text as Any)
+        voiceButton.isEnabled = true
+        
+        // 他のUILabelの枠線を消す
+        nickNameLabel.layer.borderWidth = 0.0
+        firstHashTagLabel.layer.borderWidth = 0.0
+        ThirdHashTagLabel.layer.borderWidth = 0.0
+        fourthHashTagLabel.layer.borderWidth = 0.0
+        commentContentLabel.layer.borderWidth = 0.0
+        
+        // 自身のUIlabelの枠線つける
+        secondHashTagLabel.layer.borderWidth = 1.0
+        secondHashTagLabel.layer.borderColor = UIColor.black.cgColor
+        secondHashTagLabel.layer.cornerRadius = 10.0
+        secondHashTagLabel.clipsToBounds = true
+        
+        guard let str = voiceRecognition else { return }
+        secondHashTagLabel.text = str
+    }
+    
+    @IBAction func thirdHashTagTap(_ sender: Any) {
+        print(ThirdHashTagLabel.text as Any)
+        voiceButton.isEnabled = true
+        
+        // 他のUILabelの枠線を消す
+        nickNameLabel.layer.borderWidth = 0.0
+        firstHashTagLabel.layer.borderWidth = 0.0
+        secondHashTagLabel.layer.borderWidth = 0.0
+        fourthHashTagLabel.layer.borderWidth = 0.0
+        commentContentLabel.layer.borderWidth = 0.0
+        
+        // 自身のUIlabelの枠線つける
+        ThirdHashTagLabel.layer.borderWidth = 1.0
+        ThirdHashTagLabel.layer.borderColor = UIColor.black.cgColor
+        ThirdHashTagLabel.layer.cornerRadius = 10.0
+        ThirdHashTagLabel.clipsToBounds = true
+        
+        guard let str = voiceRecognition else { return }
+        ThirdHashTagLabel.text = str
+    }
+    @IBAction func fourthHashTagTap(_ sender: Any) {
+        print(fourthHashTagLabel.text as Any)
+        voiceButton.isEnabled = true
+        
+        // 他のUILabelの枠線を消す
+        nickNameLabel.layer.borderWidth = 0.0
+        firstHashTagLabel.layer.borderWidth = 0.0
+        secondHashTagLabel.layer.borderWidth = 0.0
+        ThirdHashTagLabel.layer.borderWidth = 0.0
+        commentContentLabel.layer.borderWidth = 0.0
+        
+        // 自身のUIlabelの枠線つける
+        fourthHashTagLabel.layer.borderWidth = 1.0
+        fourthHashTagLabel.layer.borderColor = UIColor.black.cgColor
+        fourthHashTagLabel.layer.cornerRadius = 10.0
+        fourthHashTagLabel.clipsToBounds = true
+        
+        guard let str = voiceRecognition else { return }
+        fourthHashTagLabel.text = str
+    }
+    @IBAction func commentTap(_ sender: Any) {
+        print(commentContentLabel.text as Any)
+        voiceButton.isEnabled = true
+        
+        // 他のUILabelの枠線を消す
+        nickNameLabel.layer.borderWidth = 0.0
+        firstHashTagLabel.layer.borderWidth = 0.0
+        secondHashTagLabel.layer.borderWidth = 0.0
+        ThirdHashTagLabel.layer.borderWidth = 0.0
+        fourthHashTagLabel.layer.borderWidth = 0.0
+        
+        // 自身のUIlabelの枠線つける
+        commentContentLabel.layer.borderWidth = 1.0
+        commentContentLabel.layer.borderColor = UIColor.black.cgColor
+        commentContentLabel.layer.cornerRadius = 10.0
+        commentContentLabel.clipsToBounds = true
+        guard let str = voiceRecognition else { return }
+        commentContentLabel.text = str
+    }
+    
     @IBAction func voiceInputButton(_ sender: Any) {
+        voiceRecognition = nil
         if isTapped {
             voiceButton.setImage(UIImage(named: "Microphone"), for: .normal)
             isTapped = false
@@ -91,6 +229,7 @@ class TagsEditViewController: UIViewController {
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)
         recognitionReq?.endAudio()
+        voiceRecognition = nil
     }
     
     // 音声認識開始
@@ -127,9 +266,31 @@ class TagsEditViewController: UIViewController {
                 print("\(error)")
             } else {
                 DispatchQueue.main.async {
-                    print(result?.bestTranscription.formattedString)
+                    print("音声認識結果\(result?.bestTranscription.formattedString)")
+                    self.voiceRecognition = result?.bestTranscription.formattedString
                 }
             }
         })
+    }
+}
+
+extension TagsEditViewController: CoachMarksControllerDataSource {
+    
+    // コーチマークの個数
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
+        return views.count
+    }
+    
+    // コーチマークの配置と表示方法をカスタマイズ
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
+        return coachController.helper.makeCoachMark(for: views[index], pointOfInterest: nil, cutoutPathMaker: nil)
+    }
+    
+    // コーチマークに表示する文章を設定
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: (UIView & CoachMarkBodyView), arrowView: (UIView & CoachMarkArrowView)?) {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
+        coachViews.bodyView.hintLabel.text = messages[index] // ここで文章を設定
+        coachViews.bodyView.nextLabel.text = "了解"
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
     }
 }
