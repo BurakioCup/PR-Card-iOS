@@ -56,7 +56,7 @@ class CardsViewController: UIViewController,UIGestureRecognizerDelegate{
 
 extension CardsViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -95,7 +95,7 @@ extension CardsViewController: UICollectionViewDataSource{
 extension CardsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        //var UserID = IDnumbers[indexPath.row]
+        //var UserID = cardID[indexPath.row]
         //UserDefaults.standard.set(UserID, forKey: "userID")
         
         let vc2 = UIStoryboard(name: "OtherDetailCards", bundle: nil).instantiateViewController(withIdentifier:"OtherdetailcardsViewController") as! OtherDetailCardsViewController
