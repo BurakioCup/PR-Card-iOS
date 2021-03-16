@@ -15,10 +15,8 @@ class ParametersEditViewController: UIViewController {
     var slidarNumerical: Int = 0
     public var subjects = Array<String>(repeating: "", count:5) // レーダーチャートの項目
     var set: RadarChartDataSet!
-    //ラベル
-    let subject = ["国語", "英語", "数学", "理科", "社会"]
     //点数
-    let array: [Double] = [80.0, 88.0, 80.0, 70.0, 30.0]
+    let array: [Double] = [50.0, 50.0, 50.0, 50.0, 50.0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,23 +29,6 @@ class ParametersEditViewController: UIViewController {
         parametersSlider.minimumValue = 0
         parametersSlider.maximumValue = 100
         
-//        let entries = [
-//            RadarChartDataEntry(value: 70),
-//            RadarChartDataEntry(value: 80),
-//            RadarChartDataEntry(value: 50),
-//            RadarChartDataEntry(value: 20),
-//            RadarChartDataEntry(value: 100),
-//        ]
-        //let entries: [Float] = [50.0, 50.0, 50.0, 50.0, 50.0]
-        
-//        set = RadarChartDataSet(entries: entries, label: "")
-//        set.drawFilledEnabled = true // 塗りつぶし
-//        set.fillColor = .blue
-//        set.valueFormatter = RadarChartValueFormatter()
-//        //setChart(dataPoints: subjects, values: entries)
-//        radarChartView.legend.enabled = false // 凡例非表示
-//        radarChartView.data = RadarChartData(dataSet: set)
-//        radarChartView.rotationEnabled = false // 回転禁止
         //レーダーチャートのy軸の最小値と最大値
         radarChartView.yAxis.axisMinimum = 0
         radarChartView.yAxis.axisMaximum = 100
@@ -117,9 +98,7 @@ class ParametersEditViewController: UIViewController {
 // 各ポイントの最後に値を表示しない
 class RadarChartValueFormatter: ParametersEditViewController, IValueFormatter {
     public func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String{
-        //print(subjects)
-        print(dataSetIndex)
-        return subject[Int(value) % subject.count]
+        return subjects[Int(value) % subjects.count]
     }
 }
 
