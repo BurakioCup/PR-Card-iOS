@@ -45,7 +45,8 @@ class TagsEditPreviewViewController: UIViewController {
     @IBAction func tagsFinish(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBar") as MainTabBarController
-        navigationController?.pushViewController(mainTabBarController, animated: true)
+        mainTabBarController.modalPresentationStyle = .fullScreen
+        present(mainTabBarController, animated: true, completion: nil)
     }
     
     
