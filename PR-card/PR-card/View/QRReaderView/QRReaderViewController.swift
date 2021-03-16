@@ -21,8 +21,6 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         let scene = SCNScene()
         sceneView.scene = scene
         LoadingView.isHidden = true
-        let image = UIImage(named:"License")!
-        let image2 = UIImage(named:"License_Blue")!
         
         setImageToScene(image: image,x:-0.2)
         setImageToScene(image: image2,x:0.2)
@@ -99,15 +97,17 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         return node
     }
     
-    func setImageToScene(image: UIImage,x:Float) {
+    func setImageToScene(image: UIImage,x:Float,y:Float,z:Float,scale:Float,name:String) {
         if let camera = sceneView.pointOfView {
             let billboardConstraint = SCNBillboardConstraint()
             billboardConstraint.freeAxes = SCNBillboardAxis.Y
-            let position = SCNVector3(x: x, y: 0, z: -0.5)
-            let convertPosition = camera.convertPosition(position, to: nil)
-            let imageNode = createImageNode(image, position: convertPosition)
+            let position = camera.position
+            let nodePosition = SCNVector3(x: position.x+x, y: position.y+y, z: position.z+z)
+            let imageNode = createImageNode(image, position: nodePosition)
             imageNode.constraints = [billboardConstraint]
+            imageNode.scale =  SCNVector3(scale,scale,scale)
             self.sceneView.scene.rootNode.addChildNode(imageNode)
+            imageNode.name = name
         }
     }
     
