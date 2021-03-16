@@ -56,6 +56,7 @@
 		44AF483C2600F318008C2171 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF483A2600F318008C2171 /* CardsPresenter.swift */; };
 		44AF483D2600F318008C2171 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF483B2600F318008C2171 /* SignupPresenter.swift */; };
 		44AF485126010743008C2171 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF485026010743008C2171 /* SignupModel.swift */; };
+		44AF485626011E23008C2171 /* UIImageResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF485526011E23008C2171 /* UIImageResize.swift */; };
 		44B5BC0D25F6479100141E75 /* SettingUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5BC0C25F6479100141E75 /* SettingUserNameViewController.swift */; };
 		44B5BC1525F647EA00141E75 /* SettingUserName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B5BC1425F647EA00141E75 /* SettingUserName.storyboard */; };
 		44B5BC1E25F65C4A00141E75 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */; };
@@ -139,6 +140,7 @@
 		44AF483A2600F318008C2171 /* CardsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
 		44AF483B2600F318008C2171 /* SignupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
 		44AF485026010743008C2171 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
+		44AF485526011E23008C2171 /* UIImageResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageResize.swift; sourceTree = "<group>"; };
 		44B5BC0C25F6479100141E75 /* SettingUserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUserNameViewController.swift; sourceTree = "<group>"; };
 		44B5BC1425F647EA00141E75 /* SettingUserName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingUserName.storyboard; sourceTree = "<group>"; };
 		44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */,
+				44AF485526011E23008C2171 /* UIImageResize.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				44392D4025F47B6900110324 /* OtherDetailCardsViewController.swift in Sources */,
 				44392D5525F4929F00110324 /* MainTabBarController.swift in Sources */,
 				44392D7C25F4A35900110324 /* CreateAccountViewController.swift in Sources */,
+				44AF485626011E23008C2171 /* UIImageResize.swift in Sources */,
 				150B6D0F25FF5FDE00ACE8AD /* LoadingView.swift in Sources */,
 				44392D1625F4747F00110324 /* MyProfileViewController.swift in Sources */,
 				4495EC1025FF5B3E0012256A /* ParametersItemSettingViewController.swift in Sources */,
