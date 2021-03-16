@@ -11,6 +11,9 @@ class UserInfoPreviewViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userPhoto: UIImageView!
     var photo: UIImage?
+    let userDefaults = UserDefaults.standard
+    let userNamekey = "userName"
+    let userPhotoKey = "userPhoto"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +22,9 @@ class UserInfoPreviewViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         userPhoto.image = photo
+        let userPhotoData = photo?.pngData()
+        userDefaults.setValue(userPhotoData, forKey: userPhotoKey)
+        userNameLabel.text = userDefaults.string(forKey: userNamekey)
     }
     
     // 再設定ボタン
