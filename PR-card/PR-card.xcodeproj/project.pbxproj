@@ -12,6 +12,8 @@
 		44222A0225F8F7EA00EAAD03 /* TagsEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44222A0125F8F7EA00EAAD03 /* TagsEdit.storyboard */; };
 		44222A0825F8FCD300EAAD03 /* TagsEditPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44222A0725F8FCD300EAAD03 /* TagsEditPreviewViewController.swift */; };
 		44222A1025F8FCF000EAAD03 /* TagsEditPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44222A0F25F8FCF000EAAD03 /* TagsEditPreview.storyboard */; };
+		150B6D0F25FF5FDE00ACE8AD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150B6D0D25FF5FDE00ACE8AD /* LoadingView.swift */; };
+		150B6D1025FF5FDE00ACE8AD /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150B6D0E25FF5FDE00ACE8AD /* LoadingView.xib */; };
 		44392CAD25F46E6400110324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392CAC25F46E6400110324 /* AppDelegate.swift */; };
 		44392CAF25F46E6400110324 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392CAE25F46E6400110324 /* SceneDelegate.swift */; };
 		44392CB125F46E6400110324 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44392CB025F46E6400110324 /* ViewController.swift */; };
@@ -77,6 +79,8 @@
 /* Begin PBXFileReference section */
 		0870FC31D928067D02B7A5D7 /* Pods_PR_cardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PR_cardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		126A90697C4B5F6E8A739736 /* Pods-PR-card-PR-cardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card-PR-cardUITests.release.xcconfig"; path = "Target Support Files/Pods-PR-card-PR-cardUITests/Pods-PR-card-PR-cardUITests.release.xcconfig"; sourceTree = "<group>"; };
+		150B6D0D25FF5FDE00ACE8AD /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		150B6D0E25FF5FDE00ACE8AD /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		1DA93C09E54A7136615A4B74 /* Pods_PR_card.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PR_card.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E4022B1A545319A3AF4E09 /* Pods-PR-cardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-cardTests.debug.xcconfig"; path = "Target Support Files/Pods-PR-cardTests/Pods-PR-cardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		442229F925F8F7CB00EAAD03 /* TagsEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsEditViewController.swift; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				44392D0B25F4739C00110324 /* QRReaderViewController.swift */,
+				150B6D0D25FF5FDE00ACE8AD /* LoadingView.swift */,
+				150B6D0E25FF5FDE00ACE8AD /* LoadingView.xib */,
 				44392D1025F473B500110324 /* QRReader.storyboard */,
 			);
 			path = QRReaderView;
@@ -582,6 +588,7 @@
 				445CFD2325F675390070C999 /* ParametersEdit.storyboard in Resources */,
 				44392CB425F46E6400110324 /* Main.storyboard in Resources */,
 				44222A0225F8F7EA00EAAD03 /* TagsEdit.storyboard in Resources */,
+				150B6D1025FF5FDE00ACE8AD /* LoadingView.xib in Resources */,
 				44392D2A25F4759B00110324 /* MyQR.storyboard in Resources */,
 				44B5BC1525F647EA00141E75 /* SettingUserName.storyboard in Resources */,
 			);
@@ -716,6 +723,7 @@
 				44392D4025F47B6900110324 /* OtherDetailCardsViewController.swift in Sources */,
 				44392D5525F4929F00110324 /* MainTabBarController.swift in Sources */,
 				44392D7C25F4A35900110324 /* CreateAccountViewController.swift in Sources */,
+				150B6D0F25FF5FDE00ACE8AD /* LoadingView.swift in Sources */,
 				44392D1625F4747F00110324 /* MyProfileViewController.swift in Sources */,
 				4495EC1025FF5B3E0012256A /* ParametersItemSettingViewController.swift in Sources */,
 				442229FA25F8F7CB00EAAD03 /* TagsEditViewController.swift in Sources */,
