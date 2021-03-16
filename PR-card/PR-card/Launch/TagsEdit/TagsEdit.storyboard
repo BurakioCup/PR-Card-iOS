@@ -17,13 +17,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWd-Tf-NyG">
-                                <rect key="frame" x="60" y="132" width="165" height="165"/>
+                                <rect key="frame" x="60" y="89" width="165" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Microphone"/>
                                 <connections>
                                     <action selector="voiceInputButton:" destination="cft-ia-Tbk" eventType="touchUpInside" id="FVB-XP-PJu"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AVP-a6-WK3">
+                                <rect key="frame" x="233" y="53" width="340" height="340"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6p-2h-ZJs">
                                 <rect key="frame" x="579" y="51" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -111,11 +116,14 @@
                                     <outletCollection property="gestureRecognizers" destination="ydu-B2-WYU" appends="YES" id="fJh-jb-NYn"/>
                                 </connections>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AVP-a6-WK3">
-                                <rect key="frame" x="233" y="53" width="340" height="340"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0os-hN-WmW">
+                                <rect key="frame" x="74" y="309" width="137" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                                <state key="normal" image="kanryo"/>
+                                <connections>
+                                    <action selector="toTagsEditPreview:" destination="cft-ia-Tbk" eventType="touchUpInside" id="a1f-q6-lbA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ayF-ho-Xbi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -186,6 +194,7 @@
     </scenes>
     <resources>
         <image name="Microphone" width="256" height="256"/>
+        <image name="kanryo" width="136.5" height="46.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
