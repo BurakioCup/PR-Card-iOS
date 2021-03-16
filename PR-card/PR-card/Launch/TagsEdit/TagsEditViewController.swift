@@ -12,6 +12,7 @@ import UIKit
 
 class TagsEditViewController: UIViewController {
     
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var firstHashTagLabel: UILabel!
     @IBOutlet weak var secondHashTagLabel: UILabel!
@@ -28,6 +29,20 @@ class TagsEditViewController: UIViewController {
     private var views: [UIView] = []
     private let messages = ["あなたのあだ名を入力", "あなたを表す単語", "あなたを表す単語", "あなたを表す単語", "あなたを表す単語", "好きなコメントを入力"]
     var voiceRecognition: String?
+    let userDefaults = UserDefaults.standard
+    let userNamekey = "userName"
+    let nickNameKey = "nickName"
+    let first = "first"
+    let second = "second"
+    let third = "third"
+    let fourth = "fourth"
+    let fifth = "fifth"
+    let freeComment = "freeComment"
+    let tagsEditPresenter = TagsEditPresenter()
+    // 非同期のグループ
+    let dispatchGroup = DispatchGroup()
+    // 並列で実行
+    let dispatchQueue = DispatchQueue(label: "queue", attributes: .concurrent)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +54,7 @@ class TagsEditViewController: UIViewController {
         coachController.dataSource = self
         views = [nickNameLabel, firstHashTagLabel, secondHashTagLabel, ThirdHashTagLabel, fourthHashTagLabel, commentContentLabel]
         voiceButton.isEnabled = false
+        userNameLabel.text = userDefaults.string(forKey: userNamekey)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -225,9 +241,27 @@ class TagsEditViewController: UIViewController {
     }
     
     @IBAction func toTagsEditPreview(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "TagsEditPreview", bundle: nil)
-        let tagsEditPreviewVC = storyboard.instantiateViewController(identifier: "TagsEditPreview") as TagsEditPreviewViewController
-        navigationController?.pushViewController(tagsEditPreviewVC, animated: true)
+        dispatchGroup.enter()
+        dispatchQueue.async {
+            self.tagsEditPresenter.cardDetails(name: self.userNameLabel.text ?? "", nickName: self.nickNameLabel.text ?? "", hashTags: [self.firstHashTagLabel.text ?? "", self.secondHashTagLabel.text ?? "", self.ThirdHashTagLabel.text ?? "", self.fourthHashTagLabel.text ?? ""], freeText: self.commentContentLabel.text ?? "", completion: {
+                cardDetailsModel in
+                self.dispatchGroup.leave()
+            })
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            self.userDefaults.setValue(self.nickNameLabel.text, forKey: self.nickNameKey)
+            self.userDefaults.setValue(self.firstHashTagLabel.text, forKey: self.first)
+            self.userDefaults.setValue(self.secondHashTagLabel.text, forKey: self.second)
+            self.userDefaults.setValue(self.ThirdHashTagLabel.text, forKey: self.third)
+            self.userDefaults.setValue(self.fourthHashTagLabel.text, forKey: self.fourth)
+            self.userDefaults.setValue(self.commentContentLabel.text, forKey: self.freeComment)
+            self.userDefaults.synchronize()
+            
+            let storyboard = UIStoryboard(name: "TagsEditPreview", bundle: nil)
+            let tagsEditPreviewVC = storyboard.instantiateViewController(identifier: "TagsEditPreview") as TagsEditPreviewViewController
+            self.navigationController?.pushViewController(tagsEditPreviewVC, animated: true)
+        }
     }
     
     // 音声認識中止
