@@ -99,12 +99,12 @@ extension SettingUserPhotoViewController: UIImagePickerControllerDelegate {
         print("The image was selected")
         guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage? else { return
         }
-        
+        let resizedImage = selectedImage.resized(withPercentage: 0.6)
         dismiss(animated: true, completion: nil)
         
         let storyboard = UIStoryboard(name: "UserInfoPreview", bundle: nil)
         let userInfoPreviewVC = storyboard.instantiateViewController(identifier: "UserInfoPreview") as UserInfoPreviewViewController
-        userInfoPreviewVC.photo = selectedImage
+        userInfoPreviewVC.photo = resizedImage
         navigationController?.pushViewController(userInfoPreviewVC, animated: true)
     }
 }
