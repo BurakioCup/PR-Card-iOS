@@ -38,6 +38,9 @@ class ParametersEditPreviewViewController: UIViewController {
     
     // レーダーチャート編集完了
     @IBAction func finishButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "TagsEdit", bundle: nil)
+        let tagsEditVC = storyboard.instantiateViewController(identifier: "TagsEdit") as TagsEditViewController
+        navigationController?.pushViewController(tagsEditVC, animated: true)
     }
     
 }
