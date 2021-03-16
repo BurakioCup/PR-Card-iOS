@@ -46,6 +46,10 @@
 		445CFD3F25F67E9E0070C999 /* SettingUserPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445CFD3E25F67E9E0070C999 /* SettingUserPhoto.storyboard */; };
 		445CFD4525F682DD0070C999 /* UserInfoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445CFD4425F682DD0070C999 /* UserInfoPreviewViewController.swift */; };
 		445CFD4A25F682F20070C999 /* UserInfoPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445CFD4925F682F20070C999 /* UserInfoPreview.storyboard */; };
+		4495EC0525FF58950012256A /* ParametersItemIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495EC0425FF58950012256A /* ParametersItemIntroductionViewController.swift */; };
+		4495EC0A25FF58DC0012256A /* ParametersItemIntroduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4495EC0925FF58DC0012256A /* ParametersItemIntroduction.storyboard */; };
+		4495EC1025FF5B3E0012256A /* ParametersItemSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495EC0F25FF5B3E0012256A /* ParametersItemSettingViewController.swift */; };
+		4495EC1825FF5B520012256A /* ParametersItemSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4495EC1725FF5B520012256A /* ParametersItemSetting.storyboard */; };
 		44B5BC0D25F6479100141E75 /* SettingUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5BC0C25F6479100141E75 /* SettingUserNameViewController.swift */; };
 		44B5BC1525F647EA00141E75 /* SettingUserName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B5BC1425F647EA00141E75 /* SettingUserName.storyboard */; };
 		44B5BC1E25F65C4A00141E75 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */; };
@@ -119,6 +123,10 @@
 		445CFD3E25F67E9E0070C999 /* SettingUserPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingUserPhoto.storyboard; sourceTree = "<group>"; };
 		445CFD4425F682DD0070C999 /* UserInfoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPreviewViewController.swift; sourceTree = "<group>"; };
 		445CFD4925F682F20070C999 /* UserInfoPreview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfoPreview.storyboard; sourceTree = "<group>"; };
+		4495EC0425FF58950012256A /* ParametersItemIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersItemIntroductionViewController.swift; sourceTree = "<group>"; };
+		4495EC0925FF58DC0012256A /* ParametersItemIntroduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParametersItemIntroduction.storyboard; sourceTree = "<group>"; };
+		4495EC0F25FF5B3E0012256A /* ParametersItemSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersItemSettingViewController.swift; sourceTree = "<group>"; };
+		4495EC1725FF5B520012256A /* ParametersItemSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParametersItemSetting.storyboard; sourceTree = "<group>"; };
 		44B5BC0C25F6479100141E75 /* SettingUserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUserNameViewController.swift; sourceTree = "<group>"; };
 		44B5BC1425F647EA00141E75 /* SettingUserName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingUserName.storyboard; sourceTree = "<group>"; };
 		44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
@@ -329,6 +337,8 @@
 		44392D7325F4A1DF00110324 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				4495EC0E25FF5B190012256A /* ParametersItemSetting */,
+				4495EBF325FF57790012256A /* ParametersItemIntroduction */,
 				44222A0625F8FCA400EAAD03 /* TagsEditPreview */,
 				442229F825F8F7A200EAAD03 /* TagsEdit */,
 				445CFD4325F6826D0070C999 /* UserInfoPreview */,
@@ -395,6 +405,24 @@
 				445CFD4925F682F20070C999 /* UserInfoPreview.storyboard */,
 			);
 			path = UserInfoPreview;
+			sourceTree = "<group>";
+		};
+		4495EBF325FF57790012256A /* ParametersItemIntroduction */ = {
+			isa = PBXGroup;
+			children = (
+				4495EC0425FF58950012256A /* ParametersItemIntroductionViewController.swift */,
+				4495EC0925FF58DC0012256A /* ParametersItemIntroduction.storyboard */,
+			);
+			path = ParametersItemIntroduction;
+			sourceTree = "<group>";
+		};
+		4495EC0E25FF5B190012256A /* ParametersItemSetting */ = {
+			isa = PBXGroup;
+			children = (
+				4495EC0F25FF5B3E0012256A /* ParametersItemSettingViewController.swift */,
+				4495EC1725FF5B520012256A /* ParametersItemSetting.storyboard */,
+			);
+			path = ParametersItemSetting;
 			sourceTree = "<group>";
 		};
 		44B5BC0B25F646E700141E75 /* SettingUserName */ = {
@@ -548,6 +576,8 @@
 				445CFD3F25F67E9E0070C999 /* SettingUserPhoto.storyboard in Resources */,
 				445CFD4A25F682F20070C999 /* UserInfoPreview.storyboard in Resources */,
 				44392D1B25F474C500110324 /* MyProfile.storyboard in Resources */,
+				4495EC0A25FF58DC0012256A /* ParametersItemIntroduction.storyboard in Resources */,
+				4495EC1825FF5B520012256A /* ParametersItemSetting.storyboard in Resources */,
 				44392D0725F4735300110324 /* Cards.storyboard in Resources */,
 				445CFD2325F675390070C999 /* ParametersEdit.storyboard in Resources */,
 				44392CB425F46E6400110324 /* Main.storyboard in Resources */,
@@ -687,6 +717,7 @@
 				44392D5525F4929F00110324 /* MainTabBarController.swift in Sources */,
 				44392D7C25F4A35900110324 /* CreateAccountViewController.swift in Sources */,
 				44392D1625F4747F00110324 /* MyProfileViewController.swift in Sources */,
+				4495EC1025FF5B3E0012256A /* ParametersItemSettingViewController.swift in Sources */,
 				442229FA25F8F7CB00EAAD03 /* TagsEditViewController.swift in Sources */,
 				44392D0225F4733000110324 /* CardsViewController.swift in Sources */,
 				44392CB125F46E6400110324 /* ViewController.swift in Sources */,
@@ -699,6 +730,7 @@
 				44392D3125F475E800110324 /* CardsViewCell.swift in Sources */,
 				44392CAF25F46E6400110324 /* SceneDelegate.swift in Sources */,
 				445CFD2925F67C830070C999 /* ParametersEditPreviewViewController.swift in Sources */,
+				4495EC0525FF58950012256A /* ParametersItemIntroductionViewController.swift in Sources */,
 				445CFD4525F682DD0070C999 /* UserInfoPreviewViewController.swift in Sources */,
 				445CFD3725F67E800070C999 /* SettingUserPhotoViewController.swift in Sources */,
 			);
@@ -878,7 +910,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DX3FKMWYLL;
 				INFOPLIST_FILE = "PR-card/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -898,7 +930,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DX3FKMWYLL;
 				INFOPLIST_FILE = "PR-card/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
