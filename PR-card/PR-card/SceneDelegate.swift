@@ -20,18 +20,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let userDefaults = UserDefaults.standard
         let firstLunchKey = "firstLunchKey"
         if userDefaults.bool(forKey: firstLunchKey) {
-            print("２回目以降の起動")
-            window = UIWindow(windowScene: windowScene)
-            window?.rootViewController = UIStoryboard(name: "MainTabBar", bundle: nil).instantiateInitialViewController()
-            window?.makeKeyAndVisible()
-            window?.windowScene = windowScene
-        } else {
+            userDefaults.setValue(false, forKey: firstLunchKey)
+            userDefaults.synchronize()
             print("初回起動")
             window = UIWindow(windowScene: windowScene)
             window?.rootViewController = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateInitialViewController()
             window?.makeKeyAndVisible()
             window?.windowScene = windowScene
+        } else {
+            print("２回目以降の起動")
+            window = UIWindow(windowScene: windowScene)
+            window?.rootViewController = UIStoryboard(name: "MainTabBar", bundle: nil).instantiateInitialViewController()
+            window?.makeKeyAndVisible()
+            window?.windowScene = windowScene
         }
+        
+//        let userDefaults = UserDefaults.standard
+//        let firstLunchKey = "firstLunchKey"
+//        if userDefaults.bool(forKey: firstLunchKey) {
+//            userDefaults.setValue(false, forKey: firstLunchKey)
+//            userDefaults.synchronize()
+//            print("２回目以降の起動")
+//            window = UIWindow(windowScene: windowScene)
+//            window?.rootViewController = UIStoryboard(name: "MainTabBar", bundle: nil).instantiateInitialViewController()
+//            window?.makeKeyAndVisible()
+//            window?.windowScene = windowScene
+//        } else {
+//            print("初回起動")
+//            window = UIWindow(windowScene: windowScene)
+//            window?.rootViewController = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateInitialViewController()
+//            window?.makeKeyAndVisible()
+//            window?.windowScene = windowScene
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
