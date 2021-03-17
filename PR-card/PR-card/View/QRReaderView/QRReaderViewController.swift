@@ -13,6 +13,7 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var LoadingView: UIView!
     
+    let qrReaderPresenter = QRReaderPresenter()
     var drawLayer: CALayer?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,6 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         let scene = SCNScene()
         sceneView.scene = scene
         LoadingView.isHidden = true
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -158,5 +158,39 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         }
     }
     
+    func getDataFromServer(value:String){
+        DispatchQueue.global(qos: .background).async {
+            self.qrReaderPresenter.application(cardID: value, completion: {[weak self] response in
+                guard let self = self else { return }
+                guard let faceImage_url = URL(string:response.faceImage ?? "") else { return }
+                guard let nameImage_url = URL(string:response.nameImage ?? "") else { return }
+                guard let freeImage_url = URL(string:response.freeImage ?? "") else { return }
+                guard let statusImage_url = URL(string:response.statusImage ?? "") else { return }
+                guard let tagImage_url = URL(string:response.tagImage ?? "") else { return }
+                do {
+                    let faceData = try Data(contentsOf: faceImage_url)
+                    let nameData = try Data(contentsOf: nameImage_url)
+                    let freeData = try Data(contentsOf: freeImage_url)
+                    let statusData = try Data(contentsOf: statusImage_url)
+                    let tagData = try Data(contentsOf: tagImage_url)
+                    
+                    let faceImage = UIImage(data: faceData)!
+                    let nameImage = UIImage(data: nameData)!
+                    let freeImage = UIImage(data: freeData)!
+                    let statusImage = UIImage(data: statusData)!
+                    let tagImage = UIImage(data: tagData)!
+                    
+                    self.LoadingView.isHidden = true
+                    self.setImageToScene(image: faceImage, x: -0.5, y: 0.2, z: -3, scale: 1, name: "face")
+                    self.setImageToScene(image: nameImage, x: -0.4, y: -0.2, z: -3, scale: 1, name: "name")
+                    self.setImageToScene(image: freeImage, x: 0.1, y: -0.5, z: -3, scale: 0.7, name: "free")
+                    self.setImageToScene(image: statusImage, x: 0.4, y: 0.2, z: -3, scale: 3, name: "status")
+                    self.setImageToScene(image: tagImage, x: 0.4, y: -0.3, z: -3, scale: 1, name: "tag")
+                    
+                } catch {
+                    print("error 01")
+                }
+            }
+            )}
     }
 }
