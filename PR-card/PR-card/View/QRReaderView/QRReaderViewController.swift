@@ -13,22 +13,37 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var LoadingView: UIView!
     
+    let qrReaderPresenter = QRReaderPresenter()
     var drawLayer: CALayer?
+    var isReadQRCord:Bool = false
+    var isDrawUIImage:Bool = false
+    var x: Float = 0
+    var y: Float = 0
+    var z: Float = -3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView.delegate = self
         sceneView.session.delegate = self
-        sceneView.showsStatistics = true
         let scene = SCNScene()
         sceneView.scene = scene
         LoadingView.isHidden = true
-        let image = UIImage(named:"License")!
-        let image2 = UIImage(named:"License_Blue")!
-        
-        setImageToScene(image: image,x:-0.2)
-        setImageToScene(image: image2,x:0.2)
     }
     
+    @IBAction func resetQRReaderButtonAction(_ sender: Any) {
+        let alert: UIAlertController = UIAlertController(title: "PRカードリセット", message: "表示中のPRカードを消去しますか？", preferredStyle:  UIAlertController.Style.alert)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+            self.prCardDerete()
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("Cancel")
+        })
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         //画面向きを左横画面でセットする
@@ -44,7 +59,13 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
+    func prCardDerete(){
+        self.sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
+        }
+        self.isReadQRCord = false
+        self.isDrawUIImage = false
+    }
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         //左横画面に変更
         if(UIDevice.current.orientation.rawValue == 4) {
@@ -53,7 +74,7 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         } else {
             //左横画面以外の処理
             //右横画面に変更させる。
-            UIDevice.current.setValue(3, forKey: "orientation")
+            UIDevice.current.setValue(4, forKey: "orientation")
             return .landscapeRight
         }
     }
@@ -62,35 +83,56 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         sceneView.session.pause()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let location = touches.first?.location(in: sceneView),
+              let result = sceneView.hitTest(location, options: nil).first else {
+            return
+        }
+        guard let camera = sceneView.pointOfView else {
+            return
+        }
+        let node = result.node
+        
+        let targetPosCamera = SCNVector3Make(0, 0, -1)
+        let zoomInPotision = camera.convertPosition(targetPosCamera, to: nil)
+        if let touch = touches.first{
+            if touch.tapCount == 1{
+                let zoomInAction = SCNAction.move(to: zoomInPotision, duration: 0.8)
+                node.runAction(zoomInAction)
+            }
+            if touch.tapCount == 2{
+                switch node.name {
+                    case "face":
+                        x = -0.5
+                        y = 0.2
+                    case "name":
+                        x = -0.4
+                        y = -0.2
+                    case "free":
+                        x = 0.1
+                        y = -0.5
+                    case "status":
+                        x = 0.4
+                        y = 0.2
+                    case "tag":
+                        x = 0.4
+                        y = -0.3
+                    default:
+                        break
+                }
+                let zoomOutPosition = SCNVector3(camera.position.x+x,camera.position.y+y,camera.position.z+z)
+                let zoomOutAction = SCNAction.move(to: zoomOutPosition, duration: 0.8)
+                node.runAction(zoomOutAction)
+            }
+        }
+    }
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        if let frame = self.sceneView.session.currentFrame {
+        if isReadQRCord == false{
             findQRCode(frame: frame)
         }
     }
     
-    func setTextToScene(string: String){
-        if let camera = sceneView.pointOfView {
-            let depth:CGFloat = 0.2 // 奥行き0.2m
-            //extrusionDepth: 文字の厚さ
-            let text = SCNText(string: string, extrusionDepth: depth)
-            text.font = UIFont.systemFont(ofSize: 1,weight: UIFont.Weight(rawValue: CGFloat(10)))// 文字の大きさを1に設定
-            let billboardConstraint = SCNBillboardConstraint()
-            billboardConstraint.freeAxes = SCNBillboardAxis.Y
-            let textNode = SCNNode(geometry: text)
-            // テキストを配置する場所を決める
-            let (min, max) = (textNode.boundingBox)
-            let textBoundsWidth = (max.x - min.x)
-            let textBoundsHeight = (max.y - min.y)
-            let position = camera.position
-            textNode.position = SCNVector3(position.x-textBoundsWidth/2, position.y+0.2,position.z-1)
-            textNode.pivot = SCNMatrix4MakeTranslation(textBoundsWidth/2 + min.x, textBoundsHeight/2 + min.y, 0)
-            textNode.scale = SCNVector3(0.05,0.05,0.05)
-            textNode.constraints = [billboardConstraint]
-            self.sceneView.pointOfView?.addChildNode(textNode)
-        }
-    }
-    
-    private func createImageNode(_ image: UIImage, position: SCNVector3) -> SCNNode {
+    func createImageNode(_ image: UIImage, position: SCNVector3) -> SCNNode {
         let node = SCNNode()
         let scale: CGFloat = 0.3
         let geometry = SCNPlane(width: image.size.width * scale / image.size.height, height: scale)
@@ -100,14 +142,16 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         return node
     }
     
-    func setImageToScene(image: UIImage,x:Float) {
+    func setImageToScene(image: UIImage,x:Float,y:Float,z:Float,scale:Float,name:String) {
         if let camera = sceneView.pointOfView {
             let billboardConstraint = SCNBillboardConstraint()
             billboardConstraint.freeAxes = SCNBillboardAxis.Y
-            let position = SCNVector3(x: x, y: 0, z: -0.5)
-            let convertPosition = camera.convertPosition(position, to: nil)
-            let imageNode = createImageNode(image, position: convertPosition)
+            let position = camera.position
+            let nodePosition = SCNVector3(x: position.x+x, y: position.y+y, z: position.z+z)
+            let imageNode = createImageNode(image, position: nodePosition)
             imageNode.constraints = [billboardConstraint]
+            imageNode.scale = SCNVector3(scale,scale,scale)
+            imageNode.name = name
             self.sceneView.scene.rootNode.addChildNode(imageNode)
         }
     }
@@ -133,64 +177,50 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
                 self.LoadingView.isHidden = true
                 return
             }
-            self.updateDrawLayer()
-            if let drawLayer = self.drawLayer {
-                self.draw(barcode: result, onImageLayer: drawLayer)
-            }
             if let value = result.payloadStringValue {
-                //MARK: QRコードから取得したURLを用いたサーバとの通信処理
-                self.LoadingView.isHidden = false
-                print(value)
+                if self.isDrawUIImage == false {
+                    self.LoadingView.isHidden = false
+                    self.getDataFromServer(value:value)
+                    self.isReadQRCord = true
+                    self.isDrawUIImage = true
+                }
             }
         }
     }
     
-    func updateDrawLayer(){
-        let layer = CALayer()
-        if let drawLayer = self.drawLayer {
-            drawLayer.sublayers?.forEach({ layer in
-                layer.removeFromSuperlayer()
-            })
-        }
-        layer.bounds = self.sceneView.bounds
-        layer.anchorPoint = CGPoint.zero
-        layer.opacity = 0.5
-        self.view.layer.addSublayer(layer)
-        self.drawLayer = layer
-    }
-    
-    func draw(barcode: VNRectangleObservation, onImageLayer drawlayer: CALayer) {
-        CATransaction.begin()
-        let rectLayer = shapeLayerRect(color: .blue, observation: barcode)
-        // Add to pathLayer on top of image.
-        drawlayer.addSublayer(rectLayer)
-        CATransaction.commit()
-    }
-    
-    fileprivate func shapeLayerRect(color: UIColor, observation: VNRectangleObservation) -> CAShapeLayer {
-        // Create a new layer.
-        let layer = CAShapeLayer()
-        guard let drawBounds = self.drawLayer?.bounds else { return layer }
-        let orientation = UIApplication.shared.statusBarOrientation
-        guard let arTransform = self.sceneView.session.currentFrame?.displayTransform(for: orientation, viewportSize: drawBounds.size) else { return layer }
-        let affineTransform = CGAffineTransform(scaleX: drawBounds.width, y: drawBounds.height)
-        let convertedTopLeft = observation.topLeft.applying(arTransform).applying(affineTransform)
-        let convertedTopRight = observation.topRight.applying(arTransform).applying(affineTransform)
-        let convertedBottomLeft = observation.bottomLeft.applying(arTransform).applying(affineTransform)
-        let convertedBottomRight = observation.bottomRight.applying(arTransform).applying(affineTransform)
-        
-        let linePath = UIBezierPath()
-        linePath.move(to: convertedTopLeft)
-        linePath.addLine(to: convertedTopRight)
-        linePath.addLine(to: convertedBottomRight)
-        linePath.addLine(to: convertedBottomLeft)
-        linePath.addLine(to: convertedTopLeft)
-        linePath.close()
-        layer.fillColor = UIColor.clear.cgColor
-        layer.strokeColor = color.cgColor
-        layer.lineWidth = 5
-        layer.path = linePath.cgPath
-        
-        return layer
+    func getDataFromServer(value:String){
+        DispatchQueue.global(qos: .background).async {
+            self.qrReaderPresenter.application(cardID: value, completion: {[weak self] response in
+                guard let self = self else { return }
+                guard let faceImage_url = URL(string:response.faceImage ?? "") else { return }
+                guard let nameImage_url = URL(string:response.nameImage ?? "") else { return }
+                guard let freeImage_url = URL(string:response.freeImage ?? "") else { return }
+                guard let statusImage_url = URL(string:response.statusImage ?? "") else { return }
+                guard let tagImage_url = URL(string:response.tagImage ?? "") else { return }
+                do {
+                    let faceData = try Data(contentsOf: faceImage_url)
+                    let nameData = try Data(contentsOf: nameImage_url)
+                    let freeData = try Data(contentsOf: freeImage_url)
+                    let statusData = try Data(contentsOf: statusImage_url)
+                    let tagData = try Data(contentsOf: tagImage_url)
+                    
+                    let faceImage = UIImage(data: faceData)!
+                    let nameImage = UIImage(data: nameData)!
+                    let freeImage = UIImage(data: freeData)!
+                    let statusImage = UIImage(data: statusData)!
+                    let tagImage = UIImage(data: tagData)!
+                    
+                    self.LoadingView.isHidden = true
+                    self.setImageToScene(image: faceImage, x: -0.5, y: 0.2, z: -3, scale: 1, name: "face")
+                    self.setImageToScene(image: nameImage, x: -0.4, y: -0.2, z: -3, scale: 1, name: "name")
+                    self.setImageToScene(image: freeImage, x: 0.1, y: -0.5, z: -3, scale: 0.7, name: "free")
+                    self.setImageToScene(image: statusImage, x: 0.4, y: 0.2, z: -3, scale: 3, name: "status")
+                    self.setImageToScene(image: tagImage, x: 0.4, y: -0.3, z: -3, scale: 1, name: "tag")
+                    
+                } catch {
+                    print("error 01")
+                }
+            }
+            )}
     }
 }

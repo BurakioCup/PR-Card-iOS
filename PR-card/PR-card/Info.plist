@@ -4,14 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>このアプリはマイクを使用します。</string>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>このアプリは音声認識機能を使用します。</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>ユーザ写真設定のためのフォトライブラリアクセス</string>
-	<key>NSCameraUsageDescription</key>
-	<string>ユーザ写真設定のためのカメラアクセス</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -30,6 +22,12 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>カメラ機能の使用を許可しますか？</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>このアプリはマイクを使用します。</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>ユーザ写真設定のためのフォトライブラリアクセス</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>このアプリは音声認識機能を使用します。</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
