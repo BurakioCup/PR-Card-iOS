@@ -17,6 +17,10 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
     var drawLayer: CALayer?
     var isReadQRCord:Bool = false
     var isDrawUIImage:Bool = false
+    var x: Float = 0
+    var y: Float = 0
+    var z: Float = -3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView.delegate = self
@@ -26,6 +30,20 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         LoadingView.isHidden = true
     }
     
+    @IBAction func resetQRReaderButtonAction(_ sender: Any) {
+        let alert: UIAlertController = UIAlertController(title: "PRカードリセット", message: "表示中のPRカードを消去しますか？", preferredStyle:  UIAlertController.Style.alert)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+            self.prCardDerete()
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("Cancel")
+        })
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        present(alert, animated: true, completion: nil)
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let location = touches.first?.location(in: sceneView),
               let result = sceneView.hitTest(location, options: nil).first else {
