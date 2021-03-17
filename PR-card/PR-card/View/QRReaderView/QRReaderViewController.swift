@@ -44,52 +44,6 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         alert.addAction(defaultAction)
         present(alert, animated: true, completion: nil)
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let location = touches.first?.location(in: sceneView),
-              let result = sceneView.hitTest(location, options: nil).first else {
-            return
-        }
-        guard let camera = sceneView.pointOfView else {
-            return
-        }
-        let node = result.node
-        var x: Float = 0
-        var y: Float = 0
-        let z: Float = -3
-        let targetPosCamera = SCNVector3Make(0, 0, -1)
-        let zoomInPotision = camera.convertPosition(targetPosCamera, to: nil)
-        if let touch = touches.first{
-            if touch.tapCount == 1{
-                let zoomInAction = SCNAction.move(to: zoomInPotision, duration: 0.8)
-                node.runAction(zoomInAction)
-            }
-            if touch.tapCount == 2{
-                switch node.name {
-                    case "face":
-                        x = -0.3
-                        y = 0.2
-                    case "name":
-                        x = 0.3
-                        y = 0.2
-                    case "free":
-                        x = 0.1
-                        y = -0.5
-                    case "status":
-                        x = -0.4
-                        y = -0.2
-                    case "tag":
-                        x = 0.4
-                        y = -0.2
-                    default:
-                        break
-                }
-                let zoomOutPosition = SCNVector3Make(camera.position.x+x,camera.position.y+y,camera.position.z+z)
-                let zoomOutAction = SCNAction.move(to: zoomOutPosition, duration: 0.8)
-                node.runAction(zoomOutAction)
-            }
-        }
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         //画面向きを左横画面でセットする
@@ -105,7 +59,13 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
+    func prCardDerete(){
+        self.sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
+        }
+        self.isReadQRCord = false
+        self.isDrawUIImage = false
+    }
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         //左横画面に変更
         if(UIDevice.current.orientation.rawValue == 4) {
@@ -114,7 +74,7 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         } else {
             //左横画面以外の処理
             //右横画面に変更させる。
-            UIDevice.current.setValue(3, forKey: "orientation")
+            UIDevice.current.setValue(4, forKey: "orientation")
             return .landscapeRight
         }
     }
@@ -123,12 +83,56 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         sceneView.session.pause()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let location = touches.first?.location(in: sceneView),
+              let result = sceneView.hitTest(location, options: nil).first else {
+            return
+        }
+        guard let camera = sceneView.pointOfView else {
+            return
+        }
+        let node = result.node
+        
+        let targetPosCamera = SCNVector3Make(0, 0, -1)
+        let zoomInPotision = camera.convertPosition(targetPosCamera, to: nil)
+        if let touch = touches.first{
+            if touch.tapCount == 1{
+                let zoomInAction = SCNAction.move(to: zoomInPotision, duration: 0.8)
+                node.runAction(zoomInAction)
+            }
+            if touch.tapCount == 2{
+                switch node.name {
+                    case "face":
+                        x = -0.5
+                        y = 0.2
+                    case "name":
+                        x = -0.4
+                        y = -0.2
+                    case "free":
+                        x = 0.1
+                        y = -0.5
+                    case "status":
+                        x = 0.4
+                        y = 0.2
+                    case "tag":
+                        x = 0.4
+                        y = -0.3
+                    default:
+                        break
+                }
+                let zoomOutPosition = SCNVector3(camera.position.x+x,camera.position.y+y,camera.position.z+z)
+                let zoomOutAction = SCNAction.move(to: zoomOutPosition, duration: 0.8)
+                node.runAction(zoomOutAction)
+            }
+        }
+    }
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         if isReadQRCord == false{
             findQRCode(frame: frame)
         }
     }
     
+    func createImageNode(_ image: UIImage, position: SCNVector3) -> SCNNode {
         let node = SCNNode()
         let scale: CGFloat = 0.3
         let geometry = SCNPlane(width: image.size.width * scale / image.size.height, height: scale)
@@ -146,9 +150,9 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
             let nodePosition = SCNVector3(x: position.x+x, y: position.y+y, z: position.z+z)
             let imageNode = createImageNode(image, position: nodePosition)
             imageNode.constraints = [billboardConstraint]
-            imageNode.scale =  SCNVector3(scale,scale,scale)
-            self.sceneView.scene.rootNode.addChildNode(imageNode)
+            imageNode.scale = SCNVector3(scale,scale,scale)
             imageNode.name = name
+            self.sceneView.scene.rootNode.addChildNode(imageNode)
         }
     }
     
