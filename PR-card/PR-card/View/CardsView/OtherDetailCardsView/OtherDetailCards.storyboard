@@ -11,7 +11,7 @@
         <!--PR-card-->
         <scene sceneID="5xu-qN-Kre">
             <objects>
-                <viewController id="Ui7-4d-NaX" customClass="OtherDetailCardsViewController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OtherdetailcardsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ui7-4d-NaX" customClass="OtherDetailCardsViewController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9yw-mf-Eiv">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -9,7 +9,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="Kfg-Pv-o2C">
             <objects>
-                <tabBarController id="wfi-Nd-cSR" customClass="MainTabBarController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" id="wfi-Nd-cSR" customClass="MainTabBarController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wpm-vS-SyK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
