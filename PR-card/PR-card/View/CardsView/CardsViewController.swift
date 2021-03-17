@@ -11,6 +11,7 @@ import UIKit
 var cell = UICollectionView()
 
 let cardspresenter = CardsPresenter()
+var CardsID = [""]
 
 class CardsViewController: UIViewController,UIGestureRecognizerDelegate{
     
@@ -44,6 +45,8 @@ class CardsViewController: UIViewController,UIGestureRecognizerDelegate{
         //画面向きを縦画面でセットする
         UIDevice.current.setValue(1, forKey: "orientation")
         
+        collectionView.reloadData()
+        
     }
     
     override var shouldAutorotate: Bool {
@@ -56,7 +59,7 @@ class CardsViewController: UIViewController,UIGestureRecognizerDelegate{
 
 extension CardsViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -84,8 +87,6 @@ extension CardsViewController: UICollectionViewDataSource{
                 cell.userIconImage.image = UIImage(named: "sample")
             }
             
-            
-            
         })
         
         return cell
@@ -95,10 +96,11 @@ extension CardsViewController: UICollectionViewDataSource{
 extension CardsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        //var UserID = cardID[indexPath.row]
-        //UserDefaults.standard.set(UserID, forKey: "userID")
+        var UserID = CardsID[indexPath.row]
+        UserDefaults.standard.set(UserID, forKey: "userID")
+        print(UserID)
         
-        let vc2 = UIStoryboard(name: "OtherDetailCards", bundle: nil).instantiateViewController(withIdentifier:"OtherdetailcardsViewController") as! OtherDetailCardsViewController
+        let vc2 = UIStoryboard(name: "OtherDetailCards", bundle: nil).instantiateViewController(withIdentifier:"Otherdetail") as! OtherDetailCardsViewController
         vc2.modalPresentationStyle = .fullScreen
         
         navigationController?.pushViewController(vc2, animated: true)
