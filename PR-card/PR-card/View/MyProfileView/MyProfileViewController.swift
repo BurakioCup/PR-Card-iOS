@@ -33,7 +33,6 @@ class MyProfileViewController: UIViewController {
             
             
             guard let faceimage = response.faceImage else { return }
-            print("ああああああ",faceimage)
             let url1 = URL(string: (faceimage))!
             
             do {

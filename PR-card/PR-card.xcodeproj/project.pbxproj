@@ -72,6 +72,8 @@
 		44B5BC1E25F65C4A00141E75 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */; };
 		9634436D936D57DA5C5EB46A /* Pods_PR_cardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0870FC31D928067D02B7A5D7 /* Pods_PR_cardTests.framework */; };
 		A0C4F067F66706E8E1C032C5 /* Pods_PR_card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA93C09E54A7136615A4B74 /* Pods_PR_card.framework */; };
+		AB4C8C6526017F68006D535F /* OtherDetalCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4C8C6426017F68006D535F /* OtherDetalCardsModel.swift */; };
+		AB4C8C6A26017F73006D535F /* OtherDetailCardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4C8C6926017F73006D535F /* OtherDetailCardsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +168,8 @@
 		44B5BC1D25F65C4A00141E75 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 		965A621BD1C890E0041DA71B /* Pods-PR-card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card.debug.xcconfig"; path = "Target Support Files/Pods-PR-card/Pods-PR-card.debug.xcconfig"; sourceTree = "<group>"; };
 		A5803F5AD6DD0E80E27236F1 /* Pods-PR-card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card.release.xcconfig"; path = "Target Support Files/Pods-PR-card/Pods-PR-card.release.xcconfig"; sourceTree = "<group>"; };
+		AB4C8C6426017F68006D535F /* OtherDetalCardsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherDetalCardsModel.swift; sourceTree = "<group>"; };
+		AB4C8C6926017F73006D535F /* OtherDetailCardsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherDetailCardsPresenter.swift; sourceTree = "<group>"; };
 		C022EC84B8C1E666A7EB4BB6 /* Pods-PR-card-PR-cardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-card-PR-cardUITests.debug.xcconfig"; path = "Target Support Files/Pods-PR-card-PR-cardUITests/Pods-PR-card-PR-cardUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D879F00EABA6E9CDF73F2D01 /* Pods-PR-cardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PR-cardTests.release.xcconfig"; path = "Target Support Files/Pods-PR-cardTests/Pods-PR-cardTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3995EA67BB8E6F603F603FA /* Pods_PR_card_PR_cardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PR_card_PR_cardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +304,7 @@
 		44392CF725F471FF00110324 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				AB4C8C6926017F73006D535F /* OtherDetailCardsPresenter.swift */,
 				44AF483A2600F318008C2171 /* CardsPresenter.swift */,
 				44AF483B2600F318008C2171 /* SignupPresenter.swift */,
 				44A1D8C9260145CC00C4301E /* ParametersEditPresenter.swift */,
@@ -314,6 +319,7 @@
 		44392CF825F4724C00110324 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB4C8C6426017F68006D535F /* OtherDetalCardsModel.swift */,
 				44AF48352600F2A9008C2171 /* CardsModel.swift */,
 				44AF485026010743008C2171 /* SignupModel.swift */,
 				44A1D8C4260138D300C4301E /* FaceAndStatusModel.swift */,
@@ -763,6 +769,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4C8C6A26017F73006D535F /* OtherDetailCardsPresenter.swift in Sources */,
 				44A1D8CA260145CC00C4301E /* ParametersEditPresenter.swift in Sources */,
 				44222A0825F8FCD300EAAD03 /* TagsEditPreviewViewController.swift in Sources */,
 				44929386260167F500950BD2 /* CardDetailsModel.swift in Sources */,
@@ -800,6 +807,7 @@
 				44AF485126010743008C2171 /* SignupModel.swift in Sources */,
 				4495EC0525FF58950012256A /* ParametersItemIntroductionViewController.swift in Sources */,
 				445CFD4525F682DD0070C999 /* UserInfoPreviewViewController.swift in Sources */,
+				AB4C8C6526017F68006D535F /* OtherDetalCardsModel.swift in Sources */,
 				445CFD3725F67E800070C999 /* SettingUserPhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,13 +11,29 @@
         <!--PR-card-->
         <scene sceneID="5xu-qN-Kre">
             <objects>
-                <viewController storyboardIdentifier="OtherdetailcardsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ui7-4d-NaX" customClass="OtherDetailCardsViewController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Otherdetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ui7-4d-NaX" customClass="OtherDetailCardsViewController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9yw-mf-Eiv">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ig0-0j-hdE">
-                                <rect key="frame" x="185" y="80" width="526" height="255"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oPk-GI-pMs">
+                                <rect key="frame" x="223" y="71" width="295" height="283"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bri-21-bJQ">
+                                <rect key="frame" x="568" y="143" width="245" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7F-7K-ABT">
+                                <rect key="frame" x="568" y="71" width="245" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tg-yJ-PF4">
+                                <rect key="frame" x="568" y="295" width="245" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRt-sS-UTe">
+                                <rect key="frame" x="104" y="183" width="63" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -25,6 +41,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="PR-card" id="8vB-c0-NqN"/>
+                    <connections>
+                        <outlet property="FaceImage" destination="ZRt-sS-UTe" id="Jby-6U-7I3"/>
+                        <outlet property="FreeImage" destination="8tg-yJ-PF4" id="DCn-jS-mzC"/>
+                        <outlet property="NameImage" destination="d7F-7K-ABT" id="eWl-25-6Ip"/>
+                        <outlet property="StatusImage" destination="oPk-GI-pMs" id="8Vn-dI-ejg"/>
+                        <outlet property="TagImage" destination="Bri-21-bJQ" id="XEd-jL-1n6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UGa-DZ-sm1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
