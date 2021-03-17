@@ -109,29 +109,6 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
         }
     }
     
-    func setTextToScene(string: String){
-        if let camera = sceneView.pointOfView {
-            let depth:CGFloat = 0.2 // 奥行き0.2m
-            //extrusionDepth: 文字の厚さ
-            let text = SCNText(string: string, extrusionDepth: depth)
-            text.font = UIFont.systemFont(ofSize: 1,weight: UIFont.Weight(rawValue: CGFloat(10)))// 文字の大きさを1に設定
-            let billboardConstraint = SCNBillboardConstraint()
-            billboardConstraint.freeAxes = SCNBillboardAxis.Y
-            let textNode = SCNNode(geometry: text)
-            // テキストを配置する場所を決める
-            let (min, max) = (textNode.boundingBox)
-            let textBoundsWidth = (max.x - min.x)
-            let textBoundsHeight = (max.y - min.y)
-            let position = camera.position
-            textNode.position = SCNVector3(position.x-textBoundsWidth/2, position.y+0.2,position.z-1)
-            textNode.pivot = SCNMatrix4MakeTranslation(textBoundsWidth/2 + min.x, textBoundsHeight/2 + min.y, 0)
-            textNode.scale = SCNVector3(0.05,0.05,0.05)
-            textNode.constraints = [billboardConstraint]
-            self.sceneView.pointOfView?.addChildNode(textNode)
-        }
-    }
-    
-    private func createImageNode(_ image: UIImage, position: SCNVector3) -> SCNNode {
         let node = SCNNode()
         let scale: CGFloat = 0.3
         let geometry = SCNPlane(width: image.size.width * scale / image.size.height, height: scale)
@@ -176,64 +153,10 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
                 self.LoadingView.isHidden = true
                 return
             }
-            self.updateDrawLayer()
-            if let drawLayer = self.drawLayer {
-                self.draw(barcode: result, onImageLayer: drawLayer)
-            }
             if let value = result.payloadStringValue {
-                //MARK: QRコードから取得したURLを用いたサーバとの通信処理
-                self.LoadingView.isHidden = false
-                print(value)
             }
         }
     }
     
-    func updateDrawLayer(){
-        let layer = CALayer()
-        if let drawLayer = self.drawLayer {
-            drawLayer.sublayers?.forEach({ layer in
-                layer.removeFromSuperlayer()
-            })
-        }
-        layer.bounds = self.sceneView.bounds
-        layer.anchorPoint = CGPoint.zero
-        layer.opacity = 0.5
-        self.view.layer.addSublayer(layer)
-        self.drawLayer = layer
-    }
-    
-    func draw(barcode: VNRectangleObservation, onImageLayer drawlayer: CALayer) {
-        CATransaction.begin()
-        let rectLayer = shapeLayerRect(color: .blue, observation: barcode)
-        // Add to pathLayer on top of image.
-        drawlayer.addSublayer(rectLayer)
-        CATransaction.commit()
-    }
-    
-    fileprivate func shapeLayerRect(color: UIColor, observation: VNRectangleObservation) -> CAShapeLayer {
-        // Create a new layer.
-        let layer = CAShapeLayer()
-        guard let drawBounds = self.drawLayer?.bounds else { return layer }
-        let orientation = UIApplication.shared.statusBarOrientation
-        guard let arTransform = self.sceneView.session.currentFrame?.displayTransform(for: orientation, viewportSize: drawBounds.size) else { return layer }
-        let affineTransform = CGAffineTransform(scaleX: drawBounds.width, y: drawBounds.height)
-        let convertedTopLeft = observation.topLeft.applying(arTransform).applying(affineTransform)
-        let convertedTopRight = observation.topRight.applying(arTransform).applying(affineTransform)
-        let convertedBottomLeft = observation.bottomLeft.applying(arTransform).applying(affineTransform)
-        let convertedBottomRight = observation.bottomRight.applying(arTransform).applying(affineTransform)
-        
-        let linePath = UIBezierPath()
-        linePath.move(to: convertedTopLeft)
-        linePath.addLine(to: convertedTopRight)
-        linePath.addLine(to: convertedBottomRight)
-        linePath.addLine(to: convertedBottomLeft)
-        linePath.addLine(to: convertedTopLeft)
-        linePath.close()
-        layer.fillColor = UIColor.clear.cgColor
-        layer.strokeColor = color.cgColor
-        layer.lineWidth = 5
-        layer.path = linePath.cgPath
-        
-        return layer
     }
 }
