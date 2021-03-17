@@ -15,6 +15,8 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
     
     let qrReaderPresenter = QRReaderPresenter()
     var drawLayer: CALayer?
+    var isReadQRCord:Bool = false
+    var isDrawUIImage:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView.delegate = self
@@ -104,7 +106,7 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
     }
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        if let frame = self.sceneView.session.currentFrame {
+        if isReadQRCord == false{
             findQRCode(frame: frame)
         }
     }
@@ -154,6 +156,12 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
                 return
             }
             if let value = result.payloadStringValue {
+                if self.isDrawUIImage == false {
+                    self.LoadingView.isHidden = false
+                    self.getDataFromServer(value:value)
+                    self.isReadQRCord = true
+                    self.isDrawUIImage = true
+                }
             }
         }
     }
