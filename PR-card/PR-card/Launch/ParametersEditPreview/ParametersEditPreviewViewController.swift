@@ -13,14 +13,16 @@ class ParametersEditPreviewViewController: UIViewController {
     let userDefaults = UserDefaults.standard
     let statusImageDataKey = "statusImage"
     var photo: UIImage?
+    var imageData: Data?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //画面向きを左横画面でセットする
         UIDevice.current.setValue(4, forKey: "orientation")
-        guard let data = userDefaults.data(forKey: statusImageDataKey) else { return }
-        photo = UIImage(data: data)
+        //guard let data = userDefaults.data(forKey: statusImageDataKey) else { return }
+        guard let imageData = imageData else { return }
+        photo = UIImage(data: imageData)
         userStatusImage.image = photo
     }
     
