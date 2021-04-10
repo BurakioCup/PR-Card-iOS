@@ -59,7 +59,7 @@ class CardsViewController: UIViewController,UIGestureRecognizerDelegate{
 
 extension CardsViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,7 +77,7 @@ extension CardsViewController: UICollectionViewDataSource{
             
             cell.userNameLabel.text = userName
             
-            let url = URL(string: (userName))!
+            let url = URL(string: (faceImage))!
             
             do {
                 let data = try Data(contentsOf: url)
