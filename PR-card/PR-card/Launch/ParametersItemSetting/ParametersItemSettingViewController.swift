@@ -26,6 +26,8 @@ class ParametersItemSettingViewController: UIViewController {
         fourthItemTextField.delegate = self
         fifthItemTextField.delegate = self
         //toParametersEditButton.isEnabled = false
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     // 項目入力完了後にレーダーチャートの設定画面へ遷移
@@ -43,6 +45,78 @@ class ParametersItemSettingViewController: UIViewController {
         guard let thirdItem = thirdItemTextField.text else { return }
         guard let fourthItem = fourthItemTextField.text else { return }
         guard let fifthItem = fifthItemTextField.text else { return }
+    }
+    
+    // キーボード出現時にViewを上にあげる
+    @objc func keyboardWillShow(notification: NSNotification) {
+        // 編集中のtextFieldを取得
+        guard let firstTextField = firstItemTextField else { return }
+        guard let secondTextField = secondItemTextField else { return }
+        guard let thirdTextField = thirdItemTextField else { return }
+        guard let fourthTextField = fourthItemTextField else { return }
+        guard let fifthTextField = fifthItemTextField else { return }
+        
+        // キーボード、画面全体、textFieldのsizeを取得
+        let rect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        guard let keyboardHeight = rect?.size.height else { return }
+        let mainBoundsSize = UIScreen.main.bounds.size
+        let firstTextFieldHeight = firstTextField.frame.height
+        let secondTextFieldHeight = secondTextField.frame.height
+        let thirdTextFieldHeight = thirdTextField.frame.height
+        let fourthTextFieldHeight = fourthTextField.frame.height
+        let fifthTextFieldHeight = fifthTextField.frame.height
+        
+        // ① テキストフィールドの底辺より10.0下のy座標を取得
+        let firstFieldPositionY = firstTextField.frame.origin.y + firstTextFieldHeight + 10.0
+        let secondFieldPositionY = secondTextField.frame.origin.y + secondTextFieldHeight + 10.0
+        let thirdFieldPositionY = thirdTextField.frame.origin.y + thirdTextFieldHeight + 10.0
+        let fourthFieldPositionY = fourthTextField.frame.origin.y + fourthTextFieldHeight + 10.0
+        let fifthFieldPositionY = fifthTextField.frame.origin.y + fifthTextFieldHeight + 10.0
+        
+        
+        // ② キーボードの底辺のy座標を取得
+        let keyboardPositionY = mainBoundsSize.height - keyboardHeight
+        
+        // ③キーボードをずらす
+        if secondTextField.isFirstResponder {
+            print("secondTextField.isFirstResponder")
+            let duration: TimeInterval? =
+            notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+            UIView.animate(withDuration: duration!) {
+                // viewをy座標方向にtransformする
+                self.view.transform = CGAffineTransform(translationX: 0, y: keyboardPositionY - secondFieldPositionY)
+            }
+        } else if thirdTextField.isFirstResponder {
+            print("thirdTextField.isFirstResponder")
+            let duration: TimeInterval? =
+            notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+            UIView.animate(withDuration: duration!) {
+                // viewをy座標方向にtransformする
+                self.view.transform = CGAffineTransform(translationX: 0, y: keyboardPositionY - thirdFieldPositionY)
+            }
+        } else if fourthTextField.isFirstResponder {
+            let duration: TimeInterval? =
+            notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+            UIView.animate(withDuration: duration!) {
+                // viewをy座標方向にtransformする
+                self.view.transform = CGAffineTransform(translationX: 0, y: keyboardPositionY - fourthFieldPositionY)
+            }
+        } else if fifthTextField.isFirstResponder {
+            let duration: TimeInterval? =
+            notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+            UIView.animate(withDuration: duration!) {
+                // viewをy座標方向にtransformする
+                self.view.transform = CGAffineTransform(translationX: 0, y: keyboardPositionY - fifthFieldPositionY)
+            }
+        }
+    }
+    
+    // キーボードが閉じられた時にViewの高さを元に戻す
+    @objc func keyboardWillHide(notification: NSNotification) {
+        let duration: TimeInterval? = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Double
+        UIView.animate(withDuration: duration!) {
+            self.view.transform = CGAffineTransform.identity
+        }
     }
 }
 
