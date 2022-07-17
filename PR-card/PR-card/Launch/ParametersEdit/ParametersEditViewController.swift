@@ -19,6 +19,7 @@ class ParametersEditViewController: UIViewController {
     let parametersEditPresenter = ParametersEditPresenter()
     let dispatchGroup = DispatchGroup() // 非同期のグループ
     let dispatchQueue = DispatchQueue(label: "queue", attributes: .concurrent) // 並列で実行
+    var imageData: Data?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,11 +96,17 @@ class ParametersEditViewController: UIViewController {
             return Int(value)
         })
         
-        self.parametersEditPresenter.cardOverview(itemName: self.subjects, itemScore: numbersInt)
-        
-        let storyboard = UIStoryboard(name: "ParametersEditPreview", bundle: nil)
-        let parametersEditPreviewVC = storyboard.instantiateViewController(identifier: "ParametersEditPreview") as ParametersEditPreviewViewController
-        self.navigationController?.pushViewController(parametersEditPreviewVC, animated: true)
+        self.parametersEditPresenter.cardOverview(itemName: self.subjects, itemScore: numbersInt, completion: { [weak self] data in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                self.imageData = data
+                let storyboard = UIStoryboard(name: "ParametersEditPreview", bundle: nil)
+                let parametersEditPreviewVC = storyboard.instantiateViewController(identifier: "ParametersEditPreview") as ParametersEditPreviewViewController
+                parametersEditPreviewVC.imageData = self.imageData
+                self.navigationController?.pushViewController(parametersEditPreviewVC, animated: true)
+            }
+        })
     }
 }
 

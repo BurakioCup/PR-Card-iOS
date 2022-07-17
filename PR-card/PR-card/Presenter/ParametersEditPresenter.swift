@@ -9,13 +9,13 @@ import Alamofire
 import Foundation
 
 class ParametersEditPresenter {
-    func cardOverview(itemName: [String], itemScore: [Int]) {
+    func cardOverview(itemName: [String], itemScore: [Int], completion: @escaping (Data)->Void) {
         guard let requestURL = URL(string: "https://pr-card.herokuapp.com/create/card/overview") else {
             return
         }
-        print(requestURL)
-        print(itemName)
-        print(itemScore)
+        print("リクエストURL：\(requestURL)")
+        print("itemName：\(itemName)")
+        print("itemScore：\(itemScore)")
         let userDefaults = UserDefaults.standard
         let userPhotoKey = "userPhoto"
         let tokenKey = "usertoken"
@@ -45,7 +45,7 @@ class ParametersEditPresenter {
                     let statusImageData = try Data(contentsOf: statusImageUrl)
                     userDefaults.setValue(statusImageData, forKey: statusImageDataKey)
                     userDefaults.synchronize()
-                    //completion(UIImage(data: statusImageData)!)
+                    completion(statusImageData)
                 } catch let err {
                     print(err)
                 }
@@ -56,7 +56,7 @@ class ParametersEditPresenter {
                 print("----------------------------------")
 
             case .failure(_):
-                print(response.error as Any)
+                print("エラー：",response.error as Any)
             }
         }
     }

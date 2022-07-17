@@ -20,6 +20,9 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
     var x: Float = 0
     var y: Float = 0
     var z: Float = -3
+    var tapFlag: [(node: String, flag: Bool)] = [("face", false), ("name", false),
+                                                 ("free", false), ("tag", false),
+                                                 ("status", false)]  // タップした時のフラグ変数
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,38 +95,67 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
             return
         }
         let node = result.node
+        let changeScaleInAction = SCNAction.scale(by: 1.5, duration: 0.8)
+        let resetScaleInAction = SCNAction.scale(by: 2/3, duration: 0.8)
         
-        let targetPosCamera = SCNVector3Make(0, 0, -1)
-        let zoomInPotision = camera.convertPosition(targetPosCamera, to: nil)
-        if let touch = touches.first{
-            if touch.tapCount == 1{
-                let zoomInAction = SCNAction.move(to: zoomInPotision, duration: 0.8)
-                node.runAction(zoomInAction)
+        switch (node.name) {
+        case ("face"):
+            if tapFlag[0].flag {
+                node.runAction(resetScaleInAction)
+                tapFlag[0].flag = false
+                print("face", tapFlag[0])
+            } else {
+                node.runAction(changeScaleInAction)
+                tapFlag[0].flag = true
+                print("face", tapFlag[0])
             }
-            if touch.tapCount == 2{
-                switch node.name {
-                    case "face":
-                        x = -0.5
-                        y = 0.2
-                    case "name":
-                        x = -0.4
-                        y = -0.2
-                    case "free":
-                        x = 0.1
-                        y = -0.5
-                    case "status":
-                        x = 0.4
-                        y = 0.2
-                    case "tag":
-                        x = 0.4
-                        y = -0.3
-                    default:
-                        break
-                }
-                let zoomOutPosition = SCNVector3(camera.position.x+x,camera.position.y+y,camera.position.z+z)
-                let zoomOutAction = SCNAction.move(to: zoomOutPosition, duration: 0.8)
-                node.runAction(zoomOutAction)
+            break
+        case ("name"):
+            if tapFlag[1].flag {
+                node.runAction(resetScaleInAction)
+                tapFlag[1].flag = false
+                print("name", tapFlag[1])
+            } else {
+                node.runAction(changeScaleInAction)
+                tapFlag[1].flag = true
+                print("name", tapFlag[1])
             }
+            break
+        case ("free"):
+            if tapFlag[2].flag {
+                node.runAction(resetScaleInAction)
+                tapFlag[2].flag = false
+                print("free", tapFlag[2])
+            } else {
+                node.runAction(changeScaleInAction)
+                tapFlag[2].flag = true
+                print("free", tapFlag[2])
+            }
+            break
+        case ("tag"):
+            if tapFlag[3].flag {
+                node.runAction(resetScaleInAction)
+                tapFlag[3].flag = false
+                print("tag", tapFlag[3])
+            } else {
+                node.runAction(changeScaleInAction)
+                tapFlag[3].flag = true
+                print("tag", tapFlag[3])
+            }
+            break
+        case ("status"):
+            if tapFlag[4].flag {
+                node.runAction(resetScaleInAction)
+                tapFlag[4].flag = false
+                print("status", tapFlag[4])
+            } else {
+                node.runAction(changeScaleInAction)
+                tapFlag[4].flag = true
+                print("status", tapFlag[4])
+            }
+            break
+        default:
+            break
         }
     }
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
@@ -152,7 +184,7 @@ class QRReaderViewController: UIViewController, ARSCNViewDelegate, ARSessionDele
             imageNode.constraints = [billboardConstraint]
             imageNode.scale = SCNVector3(scale,scale,scale)
             imageNode.name = name
-            self.sceneView.scene.rootNode.addChildNode(imageNode)
+            camera.addChildNode(imageNode)
         }
     }
     
