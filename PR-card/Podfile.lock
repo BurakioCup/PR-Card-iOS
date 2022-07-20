@@ -4,23 +4,27 @@ PODS:
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
   - Instructions (2.0.1)
+  - KeychainSwift (20.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4.1)
   - Charts
   - Instructions (~> 2.0.1)
+  - KeychainSwift (~> 20.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Charts
     - Instructions
+    - KeychainSwift
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Instructions: dd428e3776fcdcec18bf4242b9d3fb2d1cbd6cc9
+  KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
 
-PODFILE CHECKSUM: 2f968569504e2838698c9ed67e220a795a14b52c
+PODFILE CHECKSUM: 1fa246af9a4805d20f44d00f4f605c3cda9f913f
 
-COCOAPODS: 1.10.0.beta.2
+COCOAPODS: 1.11.3
