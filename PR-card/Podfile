@@ -9,6 +9,7 @@ target 'PR-card' do
   pod 'Alamofire', '~> 5.4.1'
   pod 'Charts'
   pod 'Instructions', '~> 2.0.1'
+  pod 'KeychainSwift', '~> 20.0'
 
   target 'PR-cardTests' do
     inherit! :search_paths
