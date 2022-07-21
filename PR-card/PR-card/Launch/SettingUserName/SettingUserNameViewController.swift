@@ -12,7 +12,7 @@ class SettingUserNameViewController: UIViewController {
     
     @IBOutlet weak var userNameTextField: UITextField!
     let userDefaults = UserDefaults.standard
-    let userNamekey = "userName"
+    let userNameKey = "userName"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,35 +30,21 @@ class SettingUserNameViewController: UIViewController {
     // キーボード出現時にViewを上にあげる
     @objc func keyboardWillShow(notification: NSNotification) {
         // 編集中のtextFieldを取得
-        guard let textField = userNameTextField else { return }
-        // キーボード、画面全体、textFieldのsizeを取得
-        let rect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        guard let keyboardHeight = rect?.size.height else { return }
-        let mainBoundsSize = UIScreen.main.bounds.size
-        let textFieldHeight = textField.frame.height
+        guard let userNameTextField = userNameTextField else { return }
         
-        // ① テキストフィールドの底辺より10.0下のy座標を取得
-        let textFieldPositionY = textField.frame.origin.y + textFieldHeight + 10.0
-        
-        // ② キーボードの底辺のy座標を取得
-        let keyboardPositionY = mainBoundsSize.height - keyboardHeight
-        
-        // ③キーボードをずらす
-        if keyboardPositionY <= textFieldPositionY {
-            let duration: TimeInterval? =
-            notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
-            UIView.animate(withDuration: duration!) {
-                // viewをy座標方向にtransformする
-                self.view.transform = CGAffineTransform(translationX: 0, y: keyboardPositionY - textFieldPositionY)
+        if userNameTextField.isFirstResponder {
+            if view.frame.origin.y == 0 {
+                if let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                    view.frame.origin.y -= keyboardRect.height
+                }
             }
         }
     }
     
     // キーボードが閉じられた時にViewの高さを元に戻す
     @objc func keyboardWillHide(notification: NSNotification) {
-        let duration: TimeInterval? = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Double
-        UIView.animate(withDuration: duration!) {
-            self.view.transform = CGAffineTransform.identity
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y = 0
         }
     }
 }
@@ -71,7 +57,7 @@ extension SettingUserNameViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("ユーザネーム: \(textField.text ?? "none")")
-        userDefaults.setValue(textField.text, forKey: userNamekey)
+        userDefaults.setValue(textField.text, forKey: userNameKey)
         userDefaults.synchronize()
     }
 }
