@@ -9,7 +9,7 @@ import UIKit
 
 class ScreenRotationViewController: UIViewController {
 
-    var timer: Timer = Timer()
+    private var timer: Timer = Timer()
     override func viewDidLoad() {
         super.viewDidLoad()
         
