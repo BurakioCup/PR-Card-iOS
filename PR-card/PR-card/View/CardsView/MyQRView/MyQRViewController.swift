@@ -23,12 +23,9 @@ class MyQRViewController: UIViewController {
             
             guard let encodedImageData = MyQRImage else { return }
             let imageData = NSData(base64Encoded: encodedImageData)
-            let image = UIImage(data: imageData as! Data)
-            
+            let image = UIImage(data: imageData! as Data)
             
             self.QRimageView.image = image
-            
-            
         })
         
     }
