@@ -13,7 +13,7 @@
         <scene sceneID="7TL-zt-fvo">
             <objects>
                 <viewController id="PJl-cv-kiZ" customClass="MyProfileViewController" customModule="PR_card" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0XM-9I-yET">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="0XM-9I-yET">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="245" id="rJr-ge-rD7"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kzu-rX-GyM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kzu-rX-GyM">
                                 <rect key="frame" x="575" y="128" width="245" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="rRP-SN-jzb"/>
@@ -38,21 +38,21 @@
                                     <constraint firstAttribute="height" constant="278" id="oN0-gX-8mh"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kDA-eu-cxU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDA-eu-cxU">
                                 <rect key="frame" x="120" y="111" width="63" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="7kh-av-ceO"/>
                                     <constraint firstAttribute="height" constant="59" id="Gyp-Yr-cGm"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CCU-Xm-asp">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CCU-Xm-asp">
                                 <rect key="frame" x="575" y="278" width="245" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="Nw4-pb-oLp"/>
                                     <constraint firstAttribute="width" constant="245" id="VLe-AK-dGi"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40j-hg-q0y">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40j-hg-q0y">
                                 <rect key="frame" x="84" y="241" width="134" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="BgU-Yi-ZFa"/>
