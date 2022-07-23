@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tFm-dN-npK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tFm-dN-npK">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,9 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oPk-GI-pMs">
-                                <rect key="frame" x="223" y="71" width="295" height="283"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oPk-GI-pMs">
+                                <rect key="frame" x="223" y="71" width="295" height="295"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="295" id="ZN8-lm-vVL"/>
+                                </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bri-21-bJQ">
                                 <rect key="frame" x="568" y="143" width="245" height="128"/>
@@ -32,13 +35,19 @@
                                 <rect key="frame" x="568" y="295" width="245" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRt-sS-UTe">
-                                <rect key="frame" x="104" y="183" width="63" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRt-sS-UTe">
+                                <rect key="frame" x="104" y="189" width="63" height="59"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="orI-6H-NZG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oPk-GI-pMs" firstAttribute="top" secondItem="orI-6H-NZG" secondAttribute="top" constant="27" id="4fG-NR-OXd"/>
+                            <constraint firstItem="orI-6H-NZG" firstAttribute="bottom" secondItem="oPk-GI-pMs" secondAttribute="bottom" constant="27" id="Hf7-d3-90u"/>
+                            <constraint firstItem="ZRt-sS-UTe" firstAttribute="top" secondItem="orI-6H-NZG" secondAttribute="top" constant="145" id="mG6-pt-lXY"/>
+                            <constraint firstItem="ZRt-sS-UTe" firstAttribute="leading" secondItem="orI-6H-NZG" secondAttribute="leading" constant="60" id="ni2-Hg-pWc"/>
+                            <constraint firstItem="orI-6H-NZG" firstAttribute="bottom" secondItem="ZRt-sS-UTe" secondAttribute="bottom" constant="145" id="oDc-Yg-d1q"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="PR-card" id="8vB-c0-NqN"/>
                     <connections>
