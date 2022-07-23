@@ -17,28 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="MyQRcord" translatesAutoresizingMaskIntoConstraints="NO" id="U1p-5g-35y">
-                                <rect key="frame" x="87" y="90" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyQRcord" translatesAutoresizingMaskIntoConstraints="NO" id="U1p-5g-35y">
+                                <rect key="frame" x="87" y="93" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="DES-zJ-Gcv"/>
                                     <constraint firstAttribute="height" constant="128" id="OVO-9z-G30"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zal-D3-xI0">
-                                <rect key="frame" x="0.0" y="268" width="414" height="394"/>
+                                <rect key="frame" x="92" y="339" width="231" height="219"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="cL6-Zc-XKJ"/>
-                                    <constraint firstAttribute="height" constant="394" id="gvg-V8-VdY"/>
+                                    <constraint firstAttribute="width" constant="231" id="VJT-4i-XLk"/>
+                                    <constraint firstAttribute="height" constant="219" id="hEt-nk-avP"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JDQ-VF-SB8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zal-D3-xI0" firstAttribute="leading" secondItem="JDQ-VF-SB8" secondAttribute="leading" id="7l7-zE-eei"/>
-                            <constraint firstItem="zal-D3-xI0" firstAttribute="top" secondItem="U1p-5g-35y" secondAttribute="bottom" constant="50" id="L7X-kN-THE"/>
-                            <constraint firstItem="JDQ-VF-SB8" firstAttribute="trailing" secondItem="zal-D3-xI0" secondAttribute="trailing" id="MTq-fk-tXK"/>
-                            <constraint firstItem="JDQ-VF-SB8" firstAttribute="bottom" secondItem="zal-D3-xI0" secondAttribute="bottom" constant="200" id="kSB-Wd-eVy"/>
+                            <constraint firstItem="JDQ-VF-SB8" firstAttribute="trailing" secondItem="zal-D3-xI0" secondAttribute="trailing" constant="91" id="5CT-5s-HOo"/>
+                            <constraint firstItem="zal-D3-xI0" firstAttribute="top" secondItem="U1p-5g-35y" secondAttribute="bottom" constant="118" id="9wH-x5-w7b"/>
+                            <constraint firstItem="U1p-5g-35y" firstAttribute="leading" secondItem="JDQ-VF-SB8" secondAttribute="leading" constant="87" id="Cv1-wG-k6V"/>
+                            <constraint firstItem="JDQ-VF-SB8" firstAttribute="trailing" secondItem="U1p-5g-35y" secondAttribute="trailing" constant="87" id="EgH-uk-Hfu"/>
+                            <constraint firstItem="zal-D3-xI0" firstAttribute="leading" secondItem="JDQ-VF-SB8" secondAttribute="leading" constant="92" id="RHW-m5-feF"/>
+                            <constraint firstItem="U1p-5g-35y" firstAttribute="top" secondItem="JDQ-VF-SB8" secondAttribute="top" constant="5" id="gqh-tJ-yrD"/>
+                            <constraint firstItem="JDQ-VF-SB8" firstAttribute="bottom" secondItem="zal-D3-xI0" secondAttribute="bottom" constant="304" id="qkH-aR-IoH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="PR-card" id="Fp7-6w-oTV"/>
